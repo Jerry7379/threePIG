@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,11 +15,11 @@
 
 
 	/*
-	´ËÒ³ÃæÊÇµÇÂ½½çÃæºóµÄÖĞ¼äÒ³Ãæ£¬ÏÈÓÃrequest.getParameter()·½·¨µÃµ½´«µİ¹ıÀ´µÄ
-	²ÎÊı£¬ÔÚºÍÊı¾İ¿âÖĞµÄÓÃ»§ĞÅÏ¢½øĞĞ±È¶Ô£¬ÔÙÓÃreponse¡£sendRedirect£¨£©·½·¨½øĞĞÒ³ÃæµÄ
-	Ìø×ª¡£
+	æ­¤é¡µé¢æ˜¯ç™»é™†ç•Œé¢åçš„ä¸­é—´é¡µé¢ï¼Œå…ˆç”¨request.getParameter()æ–¹æ³•å¾—åˆ°ä¼ é€’è¿‡æ¥çš„
+	å‚æ•°ï¼Œåœ¨å’Œæ•°æ®åº“ä¸­çš„ç”¨æˆ·ä¿¡æ¯è¿›è¡Œæ¯”å¯¹ï¼Œå†ç”¨reponseã€‚sendRedirectï¼ˆï¼‰æ–¹æ³•è¿›è¡Œé¡µé¢çš„
+	è·³è½¬ã€‚
 	
-	//  ÉĞÎ´ÊµÏÖµÄ¹¦ÄÜ£ºÔÚÊäÈë²»¶ÔµÄÇé¿öÏÂ £¬Ìø×ª»ØÈ¥Ã»ÓĞÌáÊ¾ĞÅÏ¢£¬ÀıÈç£ºÃÜÂë´íÎó £¬ÓÃ»§²»´æÔÚ
+	//  å°šæœªå®ç°çš„åŠŸèƒ½ï¼šåœ¨è¾“å…¥ä¸å¯¹çš„æƒ…å†µä¸‹ ï¼Œè·³è½¬å›å»æ²¡æœ‰æç¤ºä¿¡æ¯ï¼Œä¾‹å¦‚ï¼šå¯†ç é”™è¯¯ ï¼Œç”¨æˆ·ä¸å­˜åœ¨
 	
 	*/
 	
@@ -30,11 +30,11 @@
 	
 	
 
-	//µÃµ½´«µİµÄ²ÎÊı
+	//å¾—åˆ°ä¼ é€’çš„å‚æ•°
 	String userId=request.getParameter("UserId");
-	//out.print("ÓÃ»§Ãû"+userId+".<br>");
+	//out.print("ç”¨æˆ·å"+userId+".<br>");
 	String password=request.getParameter("password");
-	//out.print("ÃÜÂë"+password+".<br>");
+	//out.print("å¯†ç "+password+".<br>");
 	
 	
 	if(userId.equals("")||password.equals(""))
@@ -46,11 +46,11 @@
 	
 	if((!userId.equals(""))&&(!password.equals("")))
 	{
-		//Á¬½ÓÊı¾İ¿â
-		String sql_select="SELECT* from ÓÃ»§ where id="+userId;
+		//è¿æ¥æ•°æ®åº“
+		String sql_select="SELECT* from ç”¨æˆ· where id="+userId;
 		//out.print(sql_select);
 		ResultSet rs = statement.executeQuery(sql_select); 
-		//»ñµÃÊı¾İ½á¹û¼¯ºÏ
+		//è·å¾—æ•°æ®ç»“æœé›†åˆ
 		//rs.next();
 		if(rs.equals(null))
 		{
@@ -59,13 +59,13 @@
 		else
 		{
 			ResultSetMetaData rmeta = rs.getMetaData();
-			//È·¶¨Êı¾İ¼¯µÄÁĞÊı£¬Òà×Ö¶ÎÊı
+			//ç¡®å®šæ•°æ®é›†çš„åˆ—æ•°ï¼Œäº¦å­—æ®µæ•°
 			int numColumns=rmeta.getColumnCount();
-			// Êä³öÃ¿Ìõ¼ÇÂ¼
+			// è¾“å‡ºæ¯æ¡è®°å½•
 			rs.next();
 			
 			
-			//½øĞĞÒ³ÃæÌø×ª
+			//è¿›è¡Œé¡µé¢è·³è½¬
 			
 			
 			
@@ -92,7 +92,7 @@
 	
 	
 		rs.last();
-		//out.println("Ò»¹²"+rs.getRow()+"Ìõ¼ÇÂ¼");
+		//out.println("ä¸€å…±"+rs.getRow()+"æ¡è®°å½•");
 		rs.close(); 
 		statement.close();          
 		connection.close(); 

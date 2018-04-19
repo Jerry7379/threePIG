@@ -1,39 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
-<title>完善个人信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>瀹屽杽涓汉淇℃伅</title>
 </head>
 <body>
 <%
-String 姓名=request.getParameter("user_name");
-out.println(姓名);
-String 性别=request.getParameter("sample-radio");
-out.println(性别);
-String 邮箱=request.getParameter("user_email");
-out.println(邮箱);
-String 学院=request.getParameter("xy");
-out.println(学院);
-String 年级=request.getParameter("nj");
-out.println(年级);
+String 濮撳悕=request.getParameter("user_name");
+out.println(濮撳悕);
+String 鎬у埆=request.getParameter("sample-radio");
+out.println(鎬у埆);
+String 閭=request.getParameter("user_email");
+out.println(閭);
+String 瀛﹂櫌=request.getParameter("xy");
+out.println(瀛﹂櫌);
+String 骞寸骇=request.getParameter("nj");
+out.println(骞寸骇);
 
 %>
 
 <%
 	
 	String a=(String)application.getAttribute("id");
-	String sql_modify="update 用户 set name='"+姓名+
-	"' ,grade=' "+年级+
-	"' ,Email='"+邮箱+
-	"' ,college='"+学院+
-	"' ,sex='"+性别+
+	String sql_modify="update 鐢ㄦ埛 set name='"+濮撳悕+
+	"' ,grade=' "+骞寸骇+
+	"' ,Email='"+閭+
+	"' ,college='"+瀛﹂櫌+
+	"' ,sex='"+鎬у埆+
 	"'  where id= "+a;
-	//String sql_insert="INSERT INTO 注册(姓名,年级,Email,部门,性别) VALUES('"+姓名+"','"+年级+"','"+邮箱+"','"+学院+"','"+性别+"')";
-    //out.println("sql语句是"+sql_modify);
-    int count = statement.executeUpdate(sql_modify);  // 执行插入操作的sql语句，并返回插入数据的个数   
+	//String sql_insert="INSERT INTO 娉ㄥ唽(濮撳悕,骞寸骇,Email,閮ㄩ棬,鎬у埆) VALUES('"+濮撳悕+"','"+骞寸骇+"','"+閭+"','"+瀛﹂櫌+"','"+鎬у埆+"')";
+    //out.println("sql璇彞鏄�"+sql_modify);
+    int count = statement.executeUpdate(sql_modify);  // 鎵ц鎻掑叆鎿嶄綔鐨剆ql璇彞锛屽苟杩斿洖鎻掑叆鏁版嵁鐨勪釜鏁�   
 	if(count>0)
 	{
 		response.sendRedirect("login.html");

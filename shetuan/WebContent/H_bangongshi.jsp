@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -12,7 +12,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>ÈËÔ±¹ÜÀí±í</title>
+    <title>äººå‘˜ç®¡ç†è¡¨</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,35 +42,35 @@
 						<li>
 							<a href="index.jsp">
 								<i class="glyphicon glyphicon-home"></i>
-								<span>Ö÷Ò³</span>
+								<span>ä¸»é¡µ</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a class="active" href="H_bangongshi.jsp">
 								<i class="glyphicon glyphicon-folder-open"></i>
-								<span>°ì¹«ÊÒ</span>
+								<span>åŠå…¬å®¤</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a  href="H_xuanchuan.jsp">
 								<i class="glyphicon glyphicon-bullhorn"></i>
-								<span>Ğû´«²¿</span>
+								<span>å®£ä¼ éƒ¨</span>
 							</a>
 						</li>
 								
 							<li class="sub-menu">
 								<a href="H_zuzhi.jsp">
 									<i class="glyphicon glyphicon-flag"></i>
-									<span>×éÖ¯²¿</span>
+									<span>ç»„ç»‡éƒ¨</span>
 								</a>
 							</li>
 		
 							<li class="sub-menu">
 								<a href="member11.html">	
 									<i class="glyphicon glyphicon-stats"></i>
-									<span>¼ÓÈëÎÒÃÇ</span>
+									<span>åŠ å…¥æˆ‘ä»¬</span>
 								</a>
 							</li>
 						</ul>
@@ -84,14 +84,14 @@
               <!-- page start-->
               <section class="panel">
                   <header class="panel-heading">
-                      	ÈËÔ±¹ÜÀí±í
+                      	äººå‘˜ç®¡ç†è¡¨
                   </header>
                   <div class="panel-body">
                       <div class="adv-table editable-table ">
                           <div class="clearfix">
                               <div class="btn-group">
                                   <button id="editable-sample_new" class="btn green">
-                                      	Ìí¼ÓĞÂµÄ³ÉÔ±ĞÅÏ¢<i class="fa fa-plus"></i>
+                                      	æ·»åŠ æ–°çš„æˆå‘˜ä¿¡æ¯<i class="fa fa-plus"></i>
                                   </button>
                               </div>
                           </div>
@@ -102,17 +102,17 @@
                           <table class="table table-striped table-hover table-bordered" id="editable-sample">
                           <thead>
                               <tr>
-                                  <th>ĞÕÃû</th>
-                                  <th>Ñ§ºÅ</th>
-                                  <th>Éù²¿</th>
-                                  <th>Ñ§Ôº</th>
-                                  <th>³öÇÚ</th>
-                                  <th>ÒôÁ¿</th>
-                                  <th>ÒôÉ«</th>
-                                  <th>Òô×¼</th>
-                                  <th>ÓÊÏä</th>
-                                  <th>±à¼­</th>
-                                  <th>É¾³ı</th>
+                                  <th>å§“å</th>
+                                  <th>å­¦å·</th>
+                                  <th>å£°éƒ¨</th>
+                                  <th>å­¦é™¢</th>
+                                  <th>å‡ºå‹¤</th>
+                                  <th>éŸ³é‡</th>
+                                  <th>éŸ³è‰²</th>
+                                  <th>éŸ³å‡†</th>
+                                  <th>é‚®ç®±</th>
+                                  <th>ç¼–è¾‘</th>
+                                  <th>åˆ é™¤</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -122,16 +122,16 @@
                             /*  
     						if(name.equals(""))
                               {
-                              	//µ¯´°£¬¸æÖªÃ»ÓĞÈ¨ÏŞ¡£
+                              	//å¼¹çª—ï¼Œå‘ŠçŸ¥æ²¡æœ‰æƒé™ã€‚
                               }
                               else
                               {*/
-	                              	String sql=" select ÓÃ»§.name,ÓÃ»§.Email,ÓÃ»§.college,ÆÀ·Ö±í.* from ÓÃ»§,ÆÀ·Ö±í  where ÓÃ»§.id=ÆÀ·Ö±í.id";
+	                              	String sql=" select ç”¨æˆ·.name,ç”¨æˆ·.Email,ç”¨æˆ·.college,è¯„åˆ†è¡¨.* from ç”¨æˆ·,è¯„åˆ†è¡¨  where ç”¨æˆ·.id=è¯„åˆ†è¡¨.id";
 	                              	ResultSet rs = statement.executeQuery(sql); 
 	                              	ResultSetMetaData rmeta = rs.getMetaData();
-	                    			//È·¶¨Êı¾İ¼¯µÄÁĞÊı£¬Òà×Ö¶ÎÊı
+	                    			//ç¡®å®šæ•°æ®é›†çš„åˆ—æ•°ï¼Œäº¦å­—æ®µæ•°
 	                    			int numColumns=rmeta.getColumnCount();
-	                    			// Êä³öÃ¿Ìõ¼ÇÂ¼
+	                    			// è¾“å‡ºæ¯æ¡è®°å½•
 	                    			//rs.next();
 	                    			for(;rs.next();)
 	                    			{
@@ -144,12 +144,12 @@
 	                    				  <td><%  out.print(rs.getString("yinse").toString());%></td>
 	                    				  <td><%  out.print(rs.getString("yinzhun").toString());%></td>
 	                    				  <td><%  out.print(rs.getString("Email").toString());%></td>
-	                    				  <td><a class="edit" href="javascript:;">ĞŞ¸ÄĞÅÏ¢</a></td>
-                                          <td><a class="delete" href="javascript:;">É¾³ıĞÅÏ¢</a></td>
+	                    				  <td><a class="edit" href="javascript:;">ä¿®æ”¹ä¿¡æ¯</a></td>
+                                          <td><a class="delete" href="javascript:;">åˆ é™¤ä¿¡æ¯</a></td>
                                           <% 
                     				}
 	                    			rs.last();
-	                    			//out.println("Ò»¹²"+rs.getRow()+"Ìõ¼ÇÂ¼");
+	                    			//out.println("ä¸€å…±"+rs.getRow()+"æ¡è®°å½•");
 	                    			rs.close(); 
 	                    			statement.close();          
 	                    			connection.close(); 

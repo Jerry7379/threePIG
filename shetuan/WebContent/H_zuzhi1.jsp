@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=gb2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>×éÖ¯²¿</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç»„ç»‡éƒ¨</title>
 </head>
 <body>
 <% 
@@ -17,9 +17,9 @@
 	String ACTLEADER=request.getParameter("actleader");
 %>
 <%
-	String sql_insert="INSERT INTO »î¶¯°²ÅÅ(actid,stname,actname,actlocal,acttime,ackeader) VALUES('"+ACTID+"','"+STNAME+"','"+ACTNAME+"','"+ACTLOCAL+"','"+ACTTIME+"','"+ACTLEADER+"')";
-   // out.println("sqlÓï¾äÊÇ"+sql_insert);
-    int count = statement.executeUpdate(sql_insert);  // Ö´ÐÐ²åÈë²Ù×÷µÄsqlÓï¾ä£¬²¢·µ»Ø²åÈëÊý¾ÝµÄ¸öÊý   
+	String sql_insert="INSERT INTO æ´»åŠ¨å®‰æŽ’(actid,stname,actname,actlocal,acttime,ackeader) VALUES('"+ACTID+"','"+STNAME+"','"+ACTNAME+"','"+ACTLOCAL+"','"+ACTTIME+"','"+ACTLEADER+"')";
+   // out.println("sqlè¯­å¥æ˜¯"+sql_insert);
+    int count = statement.executeUpdate(sql_insert);  // æ‰§è¡Œæ’å…¥æ“ä½œçš„sqlè¯­å¥ï¼Œå¹¶è¿”å›žæ’å…¥æ•°æ®çš„ä¸ªæ•°   
 	if(count>0)
 	{
 		//application.setAttribute("actid",ACTID);

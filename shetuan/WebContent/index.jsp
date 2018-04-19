@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="Mosaddek">
 		<meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 		<link rel="shortcut icon" href="img/favicon.png">
 
-		<title>Ê×Ò³</title>
+		<title>é¦–é¡µ</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,35 +40,35 @@
 				<li>
 					<a class="active" href="index.jsp">
 						<i class="glyphicon glyphicon-home"></i>
-						<span>Ö÷Ò³</span>
+						<span>ä¸»é¡µ</span>
 					</a>
 				</li>
 
 				<li class="sub-menu">
 					<a href="H_bangongshi.jsp">
 						<i class="glyphicon glyphicon-folder-open"></i>
-						<span>°ì¹«ÊÒ</span>
+						<span>åŠžå…¬å®¤</span>
 					</a>
 				</li>
 
 				<li class="sub-menu">
 					<a href="H_xuanchuan.jsp">
 						<i class="glyphicon glyphicon-bullhorn"></i>
-						<span>Ðû´«²¿</span>
+						<span>å®£ä¼ éƒ¨</span>
 					</a>
 				</li>
 						
 					<li class="sub-menu">
 						<a href="H_zuzhi.jsp">
 							<i class="glyphicon glyphicon-flag"></i>
-							<span>×éÖ¯²¿</span>
+							<span>ç»„ç»‡éƒ¨</span>
 						</a>
 					</li>
 
 					<li class="sub-menu">
 						<a href="member11.html">	
 							<i class="glyphicon glyphicon-stats"></i>
-							<span>¼ÓÈëÎÒÃÇ</span>
+							<span>åŠ å…¥æˆ‘ä»¬</span>
 						</a>
 					</li>
 				</ul>
@@ -85,10 +85,10 @@
                               	<div class="post-info">
                                  	<span class="arrow-pro right"></span>
                                   	<div class="panel-body">
-                                    	<h1><strong>´óÑ§ÉúÒÕÊõÍÅ</strong> <br>±±¾©Îï×ÊÑ§Ôº</h1>
+                                    	<h1><strong>å¤§å­¦ç”Ÿè‰ºæœ¯å›¢</strong> <br>åŒ—äº¬ç‰©èµ„å­¦é™¢</h1>
                                     	<div class="desk yellow">
 	                                        <h3>------------------------------------</h3>
-	                                        <p>´óÒÕÍÅÓÉÀñÒÇÍÅ¡¢ÎèÍÅ¡¢ºÏ³ªÍÅ¡¢Ï·¾çÍÅ¡¢¹ÜÀÖÍÅÎå¸ö·ÖÍÅ×é³É¡£ÀñÒÇÍÅÁ¥ÊôÓÚ´óÑ§ÉúÒÕÊõÍÅ£¬ÀñÒÇÍÅµÄ»î¶¯¾ÍÊÇ³öÀñÒÇ£¬ÉÏÌ¨°ä½±¡¢ÒýÁìÀÏÊ¦¡¢Ó­±öµÈµÈ¡£</p>
+	                                        <p>å¤§è‰ºå›¢ç”±ç¤¼ä»ªå›¢ã€èˆžå›¢ã€åˆå”±å›¢ã€æˆå‰§å›¢ã€ç®¡ä¹å›¢äº”ä¸ªåˆ†å›¢ç»„æˆã€‚ç¤¼ä»ªå›¢éš¶å±žäºŽå¤§å­¦ç”Ÿè‰ºæœ¯å›¢ï¼Œç¤¼ä»ªå›¢çš„æ´»åŠ¨å°±æ˜¯å‡ºç¤¼ä»ªï¼Œä¸Šå°é¢å¥–ã€å¼•é¢†è€å¸ˆã€è¿Žå®¾ç­‰ç­‰ã€‚</p>
                                     	</div>
                        				</div>
                               	</div>
@@ -96,7 +96,7 @@
                           	<aside class="post-highlight yellow v-align">
                               	<div class="panel-body text-center">
                                   	<div class="pro-thumb">
-                                      	<img src="img/photos/Î¢ÐÅÍ¼Æ¬_20180323204139.jpg" alt="">
+                                      	<img src="img/photos/å¾®ä¿¡å›¾ç‰‡_20180323204139.jpg" alt="">
                                   	</div>
                               	</div>
                           	</aside>
@@ -104,25 +104,25 @@
 						</aside>
 						<aside class="col-lg-6">
 							<div id="myCarousel" class="carousel slide">
-								<!-- ÂÖ²¥£¨Carousel£©Ö¸±ê -->
+								<!-- è½®æ’­ï¼ˆCarouselï¼‰æŒ‡æ ‡ -->
 								<ol class="carousel-indicators">
 									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 									<li data-target="#myCarousel" data-slide-to="1"></li>
 									<li data-target="#myCarousel" data-slide-to="2"></li>
 								</ol>   
-								<!-- ÂÖ²¥£¨Carousel£©ÏîÄ¿ -->
+								<!-- è½®æ’­ï¼ˆCarouselï¼‰é¡¹ç›® -->
 								<div class="carousel-inner">
 									<div class="item active">
 										<img src="img/404_icon.png" alt="First slide">
 									</div>
 									<div class="item">
-										<img src="img/photos/Î¢ÐÅÍ¼Æ¬_20180323204032.jpg" alt="Second slide">
+										<img src="img/photos/å¾®ä¿¡å›¾ç‰‡_20180323204032.jpg" alt="Second slide">
 									</div>
 									<div class="item">
-										<img src="img/photos/Î¢ÐÅÍ¼Æ¬_20180323204139.jpg" alt="Third slide">
+										<img src="img/photos/å¾®ä¿¡å›¾ç‰‡_20180323204139.jpg" alt="Third slide">
 									</div>
 								</div>
-								<!-- ÂÖ²¥£¨Carousel£©µ¼º½ -->
+								<!-- è½®æ’­ï¼ˆCarouselï¼‰å¯¼èˆª -->
 								<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 									<span class="sr-only">Previous</span>
@@ -149,7 +149,7 @@
 		                            <div class="panel-heading">
 		                                <h4 class="panel-title">
 		                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-		                                                                                ÐÂÎÅ1  	2018.3.22
+		                                                                                æ–°é—»1  	2018.3.22
 		                                    </a>
 		                                </h4>
 		                            </div>
@@ -163,7 +163,7 @@
 	                                <div class="panel-heading">
 	                                    <h4 class="panel-title">
 	                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-	                                                                                        ÐÂÎÅ2	2018.3.23
+	                                                                                        æ–°é—»2	2018.3.23
 	                                        </a>
 	                                    </h4>
 	                                </div>
@@ -177,7 +177,7 @@
 	                              	<div class="panel-heading">
 	                                  	<h4 class="panel-title">
 	                                      	<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-	                                          	ÐÂÎÅ3 	2018.3.23
+	                                          	æ–°é—»3 	2018.3.23
 	                                      	</a>
 	                                  	</h4>
 	                              	</div>

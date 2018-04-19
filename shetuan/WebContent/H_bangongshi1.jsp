@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=gb2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>°ì¹«ÊÒÈËÔ±¹ÜÀí</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>åŠå…¬å®¤äººå‘˜ç®¡ç†</title>
 </head>
 <body>
 <% 
@@ -21,9 +21,9 @@
 	String YINZHUN=request.getParameter("yinzhun");
 %>
 <%
-	String sql_insert="INSERT INTO ÆÀ·Ö±í(Id,shengbu,chuqin,yinliang,yinse,yinzhun) VALUES('"+ID+"','"+SHENGBU+"','"+CHUQIN+"','"+YINLIANG+"','"+YINSE+"','"+YINZHUN+"')";
-   // out.println("sqlÓï¾äÊÇ"+sql_insert);
-    int count = statement.executeUpdate(sql_insert);  // Ö´ĞĞ²åÈë²Ù×÷µÄsqlÓï¾ä£¬²¢·µ»Ø²åÈëÊı¾İµÄ¸öÊı   
+	String sql_insert="INSERT INTO è¯„åˆ†è¡¨(Id,shengbu,chuqin,yinliang,yinse,yinzhun) VALUES('"+ID+"','"+SHENGBU+"','"+CHUQIN+"','"+YINLIANG+"','"+YINSE+"','"+YINZHUN+"')";
+   // out.println("sqlè¯­å¥æ˜¯"+sql_insert);
+    int count = statement.executeUpdate(sql_insert);  // æ‰§è¡Œæ’å…¥æ“ä½œçš„sqlè¯­å¥ï¼Œå¹¶è¿”å›æ’å…¥æ•°æ®çš„ä¸ªæ•°   
 	if(count>0)
 	{
 		//application.setAttribute("id",ID);

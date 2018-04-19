@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <html>
 	<head>
@@ -10,7 +10,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>–¬Œ≈∑¢≤º</title>
+    <title>Êñ∞ÈóªÂèëÂ∏É</title>
     
 
     <!-- Bootstrap core CSS -->
@@ -102,35 +102,35 @@
 						<li>
 							<a href="index.jsp">
 								<i class="glyphicon glyphicon-home"></i>
-								<span>÷˜“≥</span>
+								<span>‰∏ªÈ°µ</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a href="H_bangongshi.jsp">
 								<i class="glyphicon glyphicon-folder-open"></i>
-								<span>∞Ïπ´ “</span>
+								<span>ÂäûÂÖ¨ÂÆ§</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a class="active" href="H_xuanchuan.jsp">
 								<i class="glyphicon glyphicon-bullhorn"></i>
-								<span>–˚¥´≤ø</span>
+								<span>ÂÆ£‰º†ÈÉ®</span>
 							</a>
 						</li>
 								
 							<li class="sub-menu">
 								<a href="H_zuzhi.jsp">
 									<i class="glyphicon glyphicon-flag"></i>
-									<span>◊È÷Ø≤ø</span>
+									<span>ÁªÑÁªáÈÉ®</span>
 								</a>
 							</li>
 		
 							<li class="sub-menu">
 								<a href="member11.html">	
 									<i class="glyphicon glyphicon-stats"></i>
-									<span>º”»ÎŒ“√«</span>
+									<span>Âä†ÂÖ•Êàë‰ª¨</span>
 								</a>
 							</li>
 						</ul>
@@ -145,12 +145,12 @@
 						<div class="col-lg-12">
 							<section class="panel">
 								<header class="panel-heading">
-									∑¢≤º–¬Œ≈
+									ÂèëÂ∏ÉÊñ∞Èóª
 								</header>
 								<div class="panel-body">
 									<form class="form-horizontal tasi-form" method="get">
 										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">±ÍÃ‚</label>
+											<label class="col-sm-2 col-sm-2 control-label">Ê†áÈ¢ò</label>
 											<div class="col-sm-10">
 												<input type="text" name="title" class="form-control">
 											</div>
@@ -162,7 +162,7 @@
 						                          	<div class="panel-body">
 						                              	<form action="#" class="form-horizontal tasi-form">
 						                                  	<div class="form-group">
-						                                    	<label class="control-label col-md-3">’˝Œƒ</label>
+						                                    	<label class="control-label col-md-3">Ê≠£Êñá</label>
 						                                       	<div class="col-md-15">
 						                                            <textarea class="wysihtml5 form-control" name="zhengwen" rows="18"></textarea>
 						                                        </div>
@@ -173,7 +173,7 @@
 						                  	</div>
 						              	</div>
 						              	<!--wysihtml5 end-->
-						              	<button class="btn btn-info btn-block" type="submit" name="fabu" class ="form-control">∑¢≤º</button>
+						              	<button class="btn btn-info btn-block" type="submit" name="fabu" class ="form-control">ÂèëÂ∏É</button>
 									</form>
 								</div>
 							</section>

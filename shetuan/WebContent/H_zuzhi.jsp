@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <html>
 <head>
@@ -10,7 +10,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>����ڰ��ű�</title>
+    <title>活动日期安排表</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -90,35 +90,35 @@
 						<li>
 							<a href="index.jsp">
 								<i class="glyphicon glyphicon-home"></i>
-								<span>��ҳ</span>
+								<span>主页</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a href="H_bangongshi.jsp">
 								<i class="glyphicon glyphicon-folder-open"></i>
-								<span>�칫��</span>
+								<span>办公室</span>
 							</a>
 						</li>
 		
 						<li class="sub-menu">
 							<a href="H_xuanchuan1.html">
 								<i class="glyphicon glyphicon-bullhorn"></i>
-								<span>������</span>
+								<span>宣传部</span>
 							</a>
 						</li>
 								
 							<li class="sub-menu">
 								<a href="H_zuzhi.jsp">
 									<i class="glyphicon glyphicon-flag"></i>
-									<span>��֯��</span>
+									<span>组织部</span>
 								</a>
 							</li>
 		
 							<li class="sub-menu">
 								<a href="member11.html">	
 									<i class="glyphicon glyphicon-stats"></i>
-									<span>��������</span>
+									<span>加入我们</span>
 								</a>
 							</li>
 						</ul>
@@ -132,14 +132,14 @@
 		              <!-- page start-->
 		              <section class="panel">
 		                  <header class="panel-heading">
-		                      	�����
+		                      	活动日期
 		                  </header>
 		                  <div class="panel-body">
 		                      <div class="adv-table editable-table ">
 		                          <div class="clearfix">
 		                              <div class="btn-group">
 		                                  <button id="editable-sample_new" class="btn green">
-		                                      	�����»���� <i class="fa fa-plus"></i>
+		                                      	添加新活动日期 <i class="fa fa-plus"></i>
 		                                  </button>
 		                              </div>
 		                          </div>
@@ -150,14 +150,14 @@
 		                          <table class="table table-striped table-hover table-bordered" id="editable-sample">
 		                              <thead>
 		                              <tr>
-		                                  <th>�ID</th>
-		                                  <th>��������</th>
-		                                  <th>�����</th>
-		                                  <th>��ص�</th>
-		                                  <th>�ʱ��</th>
-		                                  <th>������</th>
-		                                  <th>�༭</th>
-		                                  <th>ɾ��</th>
+		                                  <th>活动ID</th>
+		                                  <th>社团名称</th>
+		                                  <th>活动名称</th>
+		                                  <th>活动地点</th>
+		                                  <th>活动时间</th>
+		                                  <th>负责人</th>
+		                                  <th>编辑</th>
+		                                  <th>删除</th>
 		                              </tr>
 		                              </thead>
 		                              <tbody>
@@ -167,16 +167,16 @@
                             /*  
     						if(name.equals(""))
                               {
-                              	//��������֪û��Ȩ�ޡ�
+                              	//弹窗，告知没有权限。
                               }
                               else
                               {*/
-	                              	String sql=" select * from �����";
+	                              	String sql=" select * from 活动安排";
 	                              	ResultSet rs = statement.executeQuery(sql); 
 	                              	ResultSetMetaData rmeta = rs.getMetaData();
-	                    			//ȷ�����ݼ������������ֶ���
+	                    			//确定数据集的列数，亦字段数
 	                    			int numColumns=rmeta.getColumnCount();
-	                    			// ���ÿ����¼
+	                    			// 输出每条记录
 	                    			//rs.next();
 	                    			for(;rs.next();)
 	                    			{
@@ -186,12 +186,12 @@
 	                    				  <td><%  out.print(rs.getString("actlocal").toString());%></td>
 	                    				  <td><%  out.print(rs.getString("acttime").toString());%></td>
 	                    				  <td><%  out.print(rs.getString("actleader").toString());%></td>
-	                    				  <td><a class="edit" href="javascript:;">�޸���Ϣ</a></td>
-                                          <td><a class="delete" href="javascript:;">ɾ����Ϣ</a></td>
+	                    				  <td><a class="edit" href="javascript:;">修改信息</a></td>
+                                          <td><a class="delete" href="javascript:;">删除信息</a></td>
                                           <% 
                     				}
 	                    			rs.last();
-	                    			//out.println("һ��"+rs.getRow()+"����¼");
+	                    			//out.println("一共"+rs.getRow()+"条记录");
 	                    			rs.close(); 
 	                    			statement.close();          
 	                    			connection.close(); 
