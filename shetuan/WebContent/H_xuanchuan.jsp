@@ -15,16 +15,6 @@
     java.util.Date currentTime = new java.util.Date();    
     String Time = simpleDateFormat.format(currentTime).toString();  
 
-%>
-<%
-	String sql_insert="INSERT INTO 发布新闻(title,time,zhengwen) VALUES('"+Title+"','"+Time+"','"+Zhengwen+"')";
-    //out.println("sql语句是"+sql_insert);
-    int count = statement.executeUpdate(sql_insert);  // 执行插入操作的sql语句，并返回插入数据的个数   
-	if(count>0)
-
-	java.util.Date currentTime = new java.util.Date();    
-	String Time = simpleDateFormat.format(currentTime).toString();  
-	//out.println("当前时间为："+time);
 	if(Title.equals("")||Zhengwen.equals(""))
 	{
 		response.sendRedirect("H_xuanchuan1.jsp");	
