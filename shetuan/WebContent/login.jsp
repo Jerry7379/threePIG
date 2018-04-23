@@ -75,6 +75,7 @@
 				if(rs.getString("password").equals(password))
 				{
 					application.setAttribute("name",rs.getString("name"));
+					application.setAttribute("rank",rs.getString("quanxian"));
 					response.sendRedirect("index.jsp");
 					//out.print(rs.getString("Sid"));
 				}

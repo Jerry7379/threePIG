@@ -12,7 +12,6 @@
 	String Title=request.getParameter("title");
 	String Zhengwen=request.getParameter("zhengwen");
 	java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");    
-<<<<<<< HEAD
     java.util.Date currentTime = new java.util.Date();    
     String Time = simpleDateFormat.format(currentTime).toString();  
 
@@ -22,7 +21,7 @@
     //out.println("sql语句是"+sql_insert);
     int count = statement.executeUpdate(sql_insert);  // 执行插入操作的sql语句，并返回插入数据的个数   
 	if(count>0)
-=======
+
 	java.util.Date currentTime = new java.util.Date();    
 	String Time = simpleDateFormat.format(currentTime).toString();  
 	//out.println("当前时间为："+time);
@@ -32,7 +31,7 @@
 	}
 	
 	else
->>>>>>> d404933d4d043d9152f8c4b2bdc9f9cd8b77af11
+
 	{
 		
 	
