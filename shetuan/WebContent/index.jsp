@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,7 +53,7 @@
 				</li>
 
 				<li class="sub-menu">
-					<a href="H_xuanchuan.jsp">
+					<a href="H_xuanchuan1.jsp">
 						<i class="glyphicon glyphicon-bullhorn"></i>
 						<span>宣传部</span>
 					</a>
@@ -145,48 +146,59 @@
 						<aside class="col-lg-6">
                       		<!--collapse start-->
 		                    <div class="panel-group m-bot20" id="accordion">
-		                        <div class="panel panel-default">
-		                            <div class="panel-heading">
-		                                <h4 class="panel-title">
-		                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-		                                                                                新闻1  	2018.3.22
-		                                    </a>
-		                                </h4>
-		                            </div>
-		                            <div id="collapseOne" class="panel-collapse collapse in">
-		                              	<div class="panel-body">
-		                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-		                                </div>
-		                            </div>
-		                        </div>
-	                            <div class="panel panel-default">
-	                                <div class="panel-heading">
-	                                    <h4 class="panel-title">
-	                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-	                                                                                        新闻2	2018.3.23
-	                                        </a>
-	                                    </h4>
-	                                </div>
-                                	<div id="collapseTwo" class="panel-collapse collapse">
-                                		<div class="panel-body">
-                                	    	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                		</div>
-                            		</div>
-                        		</div>
-	                         	<div class="panel panel-default">
-	                              	<div class="panel-heading">
-	                                  	<h4 class="panel-title">
-	                                      	<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-	                                          	新闻3 	2018.3.23
-	                                      	</a>
-	                                  	</h4>
-	                              	</div>
-	                            	<div id="collapseThree" class="panel-collapse collapse">
-	                                	<div class="panel-body">
-	                                    	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-	                                	</div>
-	                            	</div>
-	                          	</div>
+		                    <% 
+		                    String[] id=new String[3];String[] clas=new String[3];
+    						id[0]="collapseOne";
+    						id[1]="collapseTwo";
+    						id[2]="collapseThree";
+		                    clas[0]="panel-collapse collapse in";
+		                    clas[1]="panel-collapse collapse";
+		                    clas[2]="panel-collapse collapse";
+		                    	
+			                    String sql="select * from 发布新闻  group by time";
+	                       		ResultSet rs = statement.executeQuery(sql);
+    							ResultSetMetaData rmeta = rs.getMetaData();
+    							//确定数据集的列数，亦字段数
+    							int numColumns=rmeta.getColumnCount();
+		                    	for(int i=0;i<3;i++)
+		                    	{%>
+			                        <div class="panel panel-default">
+			                            <div class="panel-heading">
+			                                <h4 class="panel-title">
+			                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<% out.print(id[i]); %>">
+			                                   		<%    
+			                                   		
+			                                   	
+			                                   			rs.next();
+			                                   			String c=rs.getString("title");
+			                                   			String a=rs.getString("time");
+			                                   			a=a.substring(0,16);
+			                                   			out.println(c+"      "+a+"");
+			                                   			
+			                                   		
+			                                 
+			                                   		%>
+			                                    </a>
+			                                </h4>
+			                            </div>
+			                            <div id="<% out.print(id[i]); %>" class="<% out.print(clas[i]);%>">
+			                              	<div class="panel-body">
+			                                   <% 
+			                                   out.print(rs.getString("zhengwen"));
+			                                   	%>
+			                                </div>
+			                            </div>
+			                        </div>
+		                    	<% }
+		                    	rs.last();
+		                    	//out.println("一共"+rs.getRow()+"条记录");
+		                    	rs.close(); 
+		                    	statement.close();          
+		                    	connection.close();
+
+		                    	%>
+	                            
+	                         	
                       		</div>
                      		<!--collapse end-->
                   		</aside>
