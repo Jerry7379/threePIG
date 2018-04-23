@@ -65,11 +65,22 @@
 							<span>组织部</span>
 						</a>
 					</li>
-
 					<li class="sub-menu">
 						<a href="member11.html">	
 							<i class="glyphicon glyphicon-stats"></i>
 							<span>加入我们</span>
+						</a>
+					</li>
+					<li class="sub-menu">
+						<a href="geo-lines.html">	
+							<i class="glyphicon glyphicon-picture"></i>
+							<span>图形</span>
+						</a>
+					</li>
+					<li class="sub-menu">
+						<a href="#">	
+							<i class="glyphicon glyphicon-lock"></i>
+							<span>图形</span>
 						</a>
 					</li>
 				</ul>
