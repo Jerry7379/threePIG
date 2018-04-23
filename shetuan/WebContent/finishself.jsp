@@ -31,8 +31,6 @@ out.println(年级);
 	"' ,college='"+学院+
 	"' ,sex='"+性别+
 	"'  where id= "+a;
-	//String sql_insert="INSERT INTO 注册(姓名,年级,Email,部门,性别) VALUES('"+姓名+"','"+年级+"','"+邮箱+"','"+学院+"','"+性别+"')";
-    //out.println("sql语句是"+sql_modify);
     int count = statement.executeUpdate(sql_modify);  // 执行插入操作的sql语句，并返回插入数据的个数   
 	if(count>0)
 	{

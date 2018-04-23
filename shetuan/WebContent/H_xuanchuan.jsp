@@ -10,17 +10,11 @@
 <body>
 <% 
 	String Title=request.getParameter("title");
-	//byte c1[]=Title.getBytes("ISO-8859-1");
-	//String TITLE=new String(c1);
-	//out.print(TITLE+"d");
 	String Zhengwen=request.getParameter("zhengwen");
-	//byte c2[]=Zhengwen.getBytes("ISO-8859-1");
-	//String zhengwen=new String(c2);
-	//out.print(zhengwen);
 	java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");    
     java.util.Date currentTime = new java.util.Date();    
     String Time = simpleDateFormat.format(currentTime).toString();  
-   //out.println("当前时间为："+time);
+
 %>
 <%
 	String sql_insert="INSERT INTO 发布新闻(title,time,zhengwen) VALUES('"+Title+"','"+Time+"','"+Zhengwen+"')";

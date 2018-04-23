@@ -19,19 +19,19 @@
 	int a=0,b=0,c=0,d=0;
 	for(;rs.next();)
 	{
-		if(rs.getString("grade").equals("1"))
+		if(rs.getString("grade").equals("大一"))
 		{
 			a++;
 		}
-		if(rs.getString("grade").equals("2"))
+		if(rs.getString("grade").equals("大二"))
 		{
 			b++;
 		}
-		if(rs.getString("grade").equals("3"))
+		if(rs.getString("grade").equals("大三"))
 		{
 			c++;
 		}
-		if(rs.getString("grade").equals("4"))
+		if(rs.getString("grade").equals("大四"))
 		{
 			d++;
 		}
