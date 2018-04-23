@@ -54,7 +54,7 @@
 						</li>
 		
 						<li class="sub-menu">
-							<a  href="H_xuanchuan.jsp">
+							<a  href="H_xuanchuan1.jsp">
 								<i class="glyphicon glyphicon-bullhorn"></i>
 								<span>宣传部</span>
 							</a>

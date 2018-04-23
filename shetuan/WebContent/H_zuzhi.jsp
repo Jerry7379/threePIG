@@ -36,51 +36,8 @@
   <body>
 
   <section id="container" class="">
-      <!--header start-->
-			<header class="header white-bg">
-				<div class="sidebar-toggle-box">
-					<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-				</div>
-				<!--logo start-->
-				<a href="index.html" class="logo">CM<span>S</span></a>
-				<!--logo end-->
-				<div class="nav notify-row" id="top_menu">
-
-				</div>
-				<div class="top-nav ">
-					<!--search & user info start-->
-					<ul class="nav pull-right top-menu">
-
-						<!-- user login dropdown start-->
-						<li class="dropdown">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<img alt="" src="img/avatar1_small.jpg">
-								<span class="username">Jhon Doue</span>
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu extended logout">
-								<div class="log-arrow-up"></div>
-								<li>
-									<a href="#"><i class=" fa fa-suitcase"></i>Profile</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-cog"></i> Settings</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-bell-o"></i> Notification</a>
-								</li>
-								<li>
-									<a href="login.html"><i class="fa fa-key"></i> Log Out</a>
-								</li>
-							</ul>
-						</li>
-						<li class="sb-toggle-right">
-							<i class="fa  fa-align-right"></i>
-						</li>
-						<!-- user login dropdown end -->
-					</ul>
-				</div>
-			</header>
+      		<!--header start-->
+			<%@include file="header.jsp" %>
 			<!--header end-->
       		<!--sidebar start-->
 		<aside>
@@ -102,7 +59,7 @@
 						</li>
 		
 						<li class="sub-menu">
-							<a href="H_xuanchuan1.html">
+							<a href="H_xuanchuan1.jsp">
 								<i class="glyphicon glyphicon-bullhorn"></i>
 								<span>宣传部</span>
 							</a>
