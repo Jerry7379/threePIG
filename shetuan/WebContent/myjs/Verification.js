@@ -92,20 +92,3 @@ function checkEmail(){
 	    return true;    
 	}
 }
-function checkNews(title,zhengwen){  
-    var news_title = form_news.title.value;
-    var news_article = form_news.zhengwen.value;  
-    if(news_title!=0){
-       
-    }else{  
-        alert("标题不能为空！");  
-        return false;
-    }  
-    if(news_article!=0){  
-    
-    }
-    else{
-        alert("请输入新闻内容！");  
-        return false;
-    }  
-}  

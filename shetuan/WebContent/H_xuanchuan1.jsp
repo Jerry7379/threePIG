@@ -141,7 +141,7 @@
 			<section id="main-content">
 				<section class="wrapper">
 					<div class="row">
-					<form class="" action="H_xuanchuan.jsp">
+					<form class="" action="H_xuanchuan.jsp" name="form" onSubmit="return checkNews(this);">
 						<div class="col-lg-12">
 							<section class="panel">
 								<header class="panel-heading">
@@ -238,7 +238,7 @@
     <script src="js/common-scripts.js"></script>
     <!--this page  script only-->
     <script src="js/advanced-form-components.js"></script>
-
+    <script type="text/javascript" src="myjs/xuanchuan.js"></script>
   	<script>
 		jQuery(document).ready(function(){
         	$('.summernote').summernote({

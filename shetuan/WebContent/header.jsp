@@ -13,7 +13,7 @@
 					<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
 				</div>
 				<!--logo start-->
-				<a href="index1.jsp" class="logo">CM<span>S</span></a>
+				<a href="index.jsp" class="logo">CM<span>S</span></a>
 				<!--logo end-->
 				<div class="nav notify-row" id="top_menu">
 
