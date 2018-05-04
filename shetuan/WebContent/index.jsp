@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ include file="conn.jsp"%>
+<%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,6 +31,7 @@
     <![endif]-->
 </head>
 <body>
+
 		<section id="container">
 			<%@include file="header.jsp" %>
 	<!--sidebar start-->
@@ -44,49 +45,70 @@
 						<span>主页</span>
 					</a>
 				</li>
-
-				<li class="sub-menu">
-					<a href="H_bangongshi.jsp">
-						<i class="glyphicon glyphicon-folder-open"></i>
-						<span>办公室</span>
-					</a>
-				</li>
-				<% 
-					<li class="sub-menu">
-						<a href="#">	
-							<i class="glyphicon glyphicon-lock"></i>
-							<span>办公室</span>
-						</a>
-					</li>
-				%>
-				<li class="sub-menu">
-					<a href="H_xuanchuan1.jsp">
-						<i class="glyphicon glyphicon-bullhorn"></i>
-						<span>宣传部</span>
-					</a>
-				</li>
-				<% 
-					<li class="sub-menu">
-						<a href="#">	
-							<i class="glyphicon glyphicon-lock"></i>
-							<span>宣传部</span>
-						</a>
-					</li>
-				%>
-				<li class="sub-menu">
-					<a href="H_zuzhi.jsp">
-						<i class="glyphicon glyphicon-flag"></i>
-						<span>组织部</span>
-					</a>
-				</li>
-				<%
-				<li class="sub-menu">
-					<a href="#">	
-						<i class="glyphicon glyphicon-lock"></i>
-						<span>组织部</span>
-					</a>
-				</li>
-				%>
+				<%	String rank="0";
+    				if(!((String)application.getAttribute("rank")==""))
+    				{
+    					rank=(String)application.getAttribute("rank");
+    				}
+					if(rank.equals("2") || rank.equals("4"))
+					{
+						%>
+						<li class="sub-menu">
+							<a href="H_bangongshi.jsp">
+								<i class="glyphicon glyphicon-folder-open"></i>
+								<span>办公室</span>
+							</a>
+						</li>
+						<% 
+					} 
+					else
+					{%>
+						<li class="sub-menu">
+							<a href="#">	
+								<i class="glyphicon glyphicon-lock"></i>
+								<span>办公室</span>
+							</a>
+						</li>
+						<%
+					}
+					if(rank.equals("3") || rank.equals("4"))
+					{%>
+						<li class="sub-menu">
+							<a href="H_xuanchuan1.jsp">
+								<i class="glyphicon glyphicon-bullhorn"></i>
+								<span>宣传部</span>
+							</a>
+						</li>
+					<%}
+					%><% 
+					else{ %>
+						<li class="sub-menu">
+							<a href="#">	
+								<i class="glyphicon glyphicon-lock"></i>
+								<span>宣传部</span>
+							</a>
+						</li>
+					<%}
+					if(rank.equals("3") || rank.equals("4"))
+					{%>
+						<li class="sub-menu">
+							<a href="H_zuzhi.jsp">
+								<i class="glyphicon glyphicon-flag"></i>
+								<span>组织部</span>
+							</a>
+						</li>
+						<%
+					}
+					else
+					{%>
+						<li class="sub-menu">
+							<a href="#">	
+								<i class="glyphicon glyphicon-lock"></i>
+								<span>组织部</span>
+							</a>
+						</li>
+					<%
+					}%>
 				<li class="sub-menu">
 					<a href="member11.html">	
 						<i class="glyphicon glyphicon-stats"></i>

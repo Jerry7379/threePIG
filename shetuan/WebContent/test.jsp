@@ -8,10 +8,10 @@
 </head>
 <body>
 <%
-String userId=request.getParameter("UserId");
+
 %>
-<%
-String sql_select="SELECT* from 发布新闻 where id="+userId;
+<%     int rank=application.getAttribute("rank");
+		out.print(rank);
 %>
 
 </body>

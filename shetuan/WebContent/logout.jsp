@@ -10,6 +10,7 @@
 <% 
 	//request.setCharacterEncoding("utf-8");
 	application.setAttribute("name",null);
+	application.setAttribute("rank","");
 	response.sendRedirect("index.jsp");
 	
 	
