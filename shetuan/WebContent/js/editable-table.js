@@ -19,17 +19,17 @@ var EditableTable = function () {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
                 
-                jqTds[0].innerHTML = '<input type="text" class="form-control small" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input type="text" class="form-control small" value="' + aData[1] + '">';
-                jqTds[2].innerHTML = '<input type="text" class="form-control small" value="' + aData[2] + '">';
-                jqTds[3].innerHTML = '<input type="text" class="form-control small" value="' + aData[3] + '">';
-                jqTds[4].innerHTML = '<input type="text" class="form-control small" value="' + aData[4] + '">';
-                jqTds[5].innerHTML = '<input type="text" class="form-control small" value="' + aData[5] + '">';
-                jqTds[6].innerHTML = '<input type="text" class="form-control small" value="' + aData[6] + '">';
-                jqTds[7].innerHTML = '<input type="text" class="form-control small" value="' + aData[7] + '">';
-                jqTds[8].innerHTML = '<input type="text" class="form-control small" value="' + aData[8] + '">';
-                jqTds[9].innerHTML = '<a class="edit" href="">保存</a>';
-                jqTds[10].innerHTML = '<a class="cancel" href="">取消</a>';
+                jqTds[0].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[0] + '">';
+                jqTds[1].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[1] + '">';
+                jqTds[2].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[2] + '">';
+                jqTds[3].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[3] + '">';
+                jqTds[4].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[4] + '">';
+                jqTds[5].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[5] + '">';
+                jqTds[6].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[6] + '">';
+                jqTds[7].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[7] + '">';
+                jqTds[8].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[8] + '">';
+                jqTds[9].innerHTML = '<a class="edit" style="width: 100%;" href="">Save</a>';
+                jqTds[10].innerHTML = '<a class="cancel" style="width: 100%;" href="">Cancel</a>';
             }
 
             function saveRow(oTable, nRow) {
@@ -43,8 +43,8 @@ var EditableTable = function () {
                 oTable.fnUpdate(jqInputs[6].value, nRow, 6, false);
                 oTable.fnUpdate(jqInputs[7].value, nRow, 7, false);  
                 oTable.fnUpdate(jqInputs[8].value, nRow, 8, false);
-                oTable.fnUpdate('<a class="edit" href="">编辑</a>', nRow, 9, false);
-                oTable.fnUpdate('<a class="delete" href="">删除</a>', nRow, 10, false);
+                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 9, false);
+                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 10, false);
                 oTable.fnDraw();
             }
 

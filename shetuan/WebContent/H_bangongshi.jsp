@@ -102,17 +102,17 @@
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
-                                <th>姓名</th>
-	                            <th>学号</th>
-	                            <th>声部</th>
-	                            <th>学院</th>
-	                            <th>出勤</th>
-	                            <th>音量</th>
-	                            <th>音色</th>
-	                            <th>音准</th>
-	                            <th>邮箱</th>
-	                            <th>编辑</th>
-	                            <th>删除</th>
+                                <th style="width: 7.7%;">姓名</th>
+	                            <th style="width: 15.3%;">学号</th>
+	                            <th style="width: 7.7%;">声部</th>
+	                            <th style="width: 7.7%;">学院</th>
+	                            <th style="width: 7.7%;">出勤</th>
+	                            <th style="width: 7.7%;">音量</th>
+	                            <th style="width: 7.7%;"">音色</th>
+	                            <th style="width: 7.7%;">音准</th>
+	                            <th style="width: 15.4%;">邮箱</th>
+	                            <th style="width: 7.7%;">编辑</th>
+	                            <th style="width: 7.7%;">删除</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -135,8 +135,8 @@
 			                    	<td><% out.print(rs.getString("yinse").toString());%></td>
 			                    	<td><% out.print(rs.getString("yinzhun").toString());%></td>
 			                    	<td><% out.print(rs.getString("Email").toString());%></td>
-			                    	<td><a class="edit" href="javascript:;">修改信息</a></td>
-		                            <td><a class="delete" href="javascript:;">删除信息</a></td>
+			                    	<td><a class="edit" href="javascript:;">Edit</a></td>
+		                            <td><a class="delete" href="javascript:;">Delete</a></td>
 		                       		</tr><% 
 		                    	}
 		                    	rs.last();
