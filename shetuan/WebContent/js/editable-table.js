@@ -18,18 +18,17 @@ var EditableTable = function () {
             function editRow(oTable, nRow) {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
-                innerHTML = '<form action="H_bangongshi1.jsp" method="post">';
-                jqTds[0].innerHTML = '<input type="text" style="width: 70px;" class="form-control input-sm" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input type="text" style="width: 70px;" name="id" class="form-control input-sm" value="' + aData[1] + '">';
-                jqTds[2].innerHTML = '<input type="text" style="width: 70px;" name="shengbu" class="form-control input-sm" value="' + aData[2] + '">';
-                jqTds[3].innerHTML = '<input type="text" style="width: 70px;" class="form-control input-sm" value="' + aData[3] + '">';
-                jqTds[4].innerHTML = '<input type="text" style="width: 70px;"name="chuqin" class="form-control input-sm" value="' + aData[4] + '">';
-                jqTds[5].innerHTML = '<input type="text" style="width: 70px;" name="yinliang" class="form-control input-sm" value="' + aData[5] + '">';
-                jqTds[6].innerHTML = '<input type="text" style="width: 70px;"  name="yinse"class="form-control input-sm" value="' + aData[6] + '">';
-                jqTds[7].innerHTML = '<input type="text" style="width: 70px;" name="yinzhun" class="form-control input-sm" value="' + aData[7] + '">';
-                jqTds[8].innerHTML = '<input type="text" style="width: 120px;" class="form-control input-sm" value="' + aData[8] + '">';
-                jqTds[9].innerHTML = '<input type="submit" action="H_bangongshi1.jsp">';
-              //  jqTds[9].innerHTML = '<input href="H_bangonshi.jsp" type="submit">';            
+                
+                jqTds[0].innerHTML = '<input type="text" class="form-control small" value="' + aData[0] + '">';
+                jqTds[1].innerHTML = '<input type="text" class="form-control small" value="' + aData[1] + '">';
+                jqTds[2].innerHTML = '<input type="text" class="form-control small" value="' + aData[2] + '">';
+                jqTds[3].innerHTML = '<input type="text" class="form-control small" value="' + aData[3] + '">';
+                jqTds[4].innerHTML = '<input type="text" class="form-control small" value="' + aData[4] + '">';
+                jqTds[5].innerHTML = '<input type="text" class="form-control small" value="' + aData[5] + '">';
+                jqTds[6].innerHTML = '<input type="text" class="form-control small" value="' + aData[6] + '">';
+                jqTds[7].innerHTML = '<input type="text" class="form-control small" value="' + aData[7] + '">';
+                jqTds[8].innerHTML = '<input type="text" class="form-control small" value="' + aData[8] + '">';
+                jqTds[9].innerHTML = '<a class="edit" href="">保存</a>';
                 jqTds[10].innerHTML = '<a class="cancel" href="">取消</a>';
             }
 
@@ -70,7 +69,7 @@ var EditableTable = function () {
                     [5, 15, 20, "All"] // change per page values here
                 ],
                 // set the initial value
-                "iDisplayLength": 5,
+                "iDisplayLength": 10,
                 "sDom": "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-6'i><'col-lg-6'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
