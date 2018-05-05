@@ -15,6 +15,7 @@
 		<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 		<!-- Custom styles for this template -->
 		<link href="css/style.css" rel="stylesheet">
+		<link href="css/stylefinish.css" rel="stylesheet">
 		<link href="css/style-responsive.css" rel="stylesheet" />
 	</head>
 
@@ -36,6 +37,29 @@
             			<table class="table table-striped">
 							<thead>
 								<tr>
+									<form action="#">
+							            <label for="addr-show">您选择的是：
+							                <input type="text" value="" id="addr-show">
+							            </label>
+							            <br/>
+							
+							            <!--省份选择-->
+							            <select id="prov" onchange="showCity(this)">
+							                <option>=请选择省份=</option>
+
+							            </select>
+							
+							            <!--城市选择-->
+							            <select id="city" style="margin-left: 2px;" onchange="showCountry(this)">
+							                <option>=请选择城市=</option>
+							            </select>
+							            
+							            <button type="button" class="btn1 met1" onClick="showAddr()">确定</button>
+							        </form>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
 								<th>年级</th>
 								<th><select name="nj">
 					           		<option value="1">大一</option>
@@ -45,28 +69,29 @@
 					            	</select>
 								</th>
 								</tr>
-							</thead>
-								<tbody>
-									<tr>
-										<td>学院</td>
-										<td><select name="xy">
-							           		<option value="xy_xx">信息学院</option>
-							            	<option value="xy_f">法学院 </option>
-							            	<option value="xy_jj">经济学院</option>
-							            	<option value="xy_wl">物流学院</option>
-							            	<option value="xy_s">商学院</option>
-							            	<option value="xy_wy">外语学院</option>
-							            	</select>
-										</td>
-									</tr>
+							</tbody>
+							<tbody>
+								<tr>
+									<td>学院</td>
+									<td><select name="xy">
+							           	<option value="xy_xx">信息学院</option>
+							            <option value="xy_f">法学院 </option>
+							            <option value="xy_jj">经济学院</option>
+							            <option value="xy_wl">物流学院</option>
+							            <option value="xy_s">商学院</option>
+							            <option value="xy_wy">外语学院</option>
+							            </select>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					<br></br>
-				<!--button class="btn btn-lg btn-login btn-block" type="submit">保存-->
 				<button class="btn btn-lg btn-login btn-block" type="submit" class ="form-control">保存</button>
 			</form>	
 			</div>
 		<script src="myjs/Verification.js"></script>
+		<script src="myjs/city.js"></script>
+		<script src="myjs/method01.js"></script>
 	</body>
 
 </html>

@@ -1,7 +1,7 @@
-//****************Õë¶ÔµÚÒ»ÖÖ·½Ê½µÄ¾ßÌåjsÊµÏÖ²¿·Ö******************//
-//****************ËùÊ¹ÓÃµÄÊı¾İÊÇcity.js******************//
+//****************é’ˆå¯¹ç¬¬ä¸€ç§æ–¹å¼çš„å…·ä½“jså®ç°éƒ¨åˆ†******************//
+//****************æ‰€ä½¿ç”¨çš„æ•°æ®æ˜¯city.js******************//
 
-/*¸ù¾İid»ñÈ¡¶ÔÏó*/
+/*æ ¹æ®idè·å–å¯¹è±¡*/
 function $(str) {
     return document.getElementById(str);
 }
@@ -10,17 +10,15 @@ var addrShow = $('addr-show');
 var btn = document.getElementsByClassName('met1')[0];
 var prov = $('prov');
 var city = $('city');
-var country = $('country');
 
 
-/*ÓÃÓÚ±£´æµ±Ç°ËùÑ¡µÄÊ¡ÊĞÇø*/
+/*ç”¨äºä¿å­˜å½“å‰æ‰€é€‰çš„çœå¸‚åŒº*/
 var current = {
     prov: '',
     city: '',
-    country: ''
 };
 
-/*×Ô¶¯¼ÓÔØÊ¡·İÁĞ±í*/
+/*è‡ªåŠ¨åŠ è½½çœä»½åˆ—è¡¨*/
 (function showProv() {
     btn.disabled = true;
     var len = provice.length;
@@ -32,7 +30,7 @@ var current = {
     }
 })();
 
-/*¸ù¾İËùÑ¡µÄÊ¡·İÀ´ÏÔÊ¾³ÇÊĞÁĞ±í*/
+/*æ ¹æ®æ‰€é€‰çš„çœä»½æ¥æ˜¾ç¤ºåŸå¸‚åˆ—è¡¨*/
 function showCity(obj) {
     var val = obj.options[obj.selectedIndex].value;
     if (val != current.prov) {
@@ -53,12 +51,13 @@ function showCity(obj) {
     }
 }
 
-/*¸ù¾İËùÑ¡µÄ³ÇÊĞÀ´ÏÔÊ¾ÏØÇøÁĞ±í*/
+/*æ ¹æ®æ‰€é€‰çš„åŸå¸‚æ¥æ˜¾ç¤ºå¿åŒºåˆ—è¡¨*/
 function showCountry(obj) {
     var val = obj.options[obj.selectedIndex].value;
     current.city = val;
+    btn.disabled = false;
     if (val != null) {
-        country.length = 1; //Çå¿ÕÖ®Ç°µÄÄÚÈİÖ»ÁôµÚÒ»¸öÄ¬ÈÏÑ¡Ïî
+        country.length = 1; //æ¸…ç©ºä¹‹å‰çš„å†…å®¹åªç•™ç¬¬ä¸€ä¸ªé»˜è®¤é€‰é¡¹
         var countryLen = provice[current.prov]["city"][val].districtAndCounty.length;
         if(countryLen == 0){
             addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city"][current.city].name;
@@ -73,15 +72,7 @@ function showCountry(obj) {
     }
 }
 
-/*Ñ¡ÔñÏØÇøÖ®ºóµÄ´¦Àíº¯Êı*/
-function selecCountry(obj) {
-    current.country = obj.options[obj.selectedIndex].value;
-    if ((current.city != null) && (current.country != null)) {
-        btn.disabled = false;
-    }
-}
-
-/*µã»÷È·¶¨°´Å¥ÏÔÊ¾ÓÃ»§ËùÑ¡µÄµØÖ·*/
+/*ç‚¹å‡»ç¡®å®šæŒ‰é’®æ˜¾ç¤ºç”¨æˆ·æ‰€é€‰çš„åœ°å€*/
 function showAddr() {
-    addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city"][current.city].name + '-' + provice[current.prov]["city"][current.city].districtAndCounty[current.country];
+    addrShow.value = provice[current.prov]["city"][current.city].name;
 }

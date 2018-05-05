@@ -1,4 +1,4 @@
-/*È«¾ÖÑùÊ½*/
+/*éã„¥çœ¬éå³°ç´¡*/
 * {
     margin: 0;
     padding: 0;
@@ -22,27 +22,27 @@ legend{
     margin-bottom: 10px;
 }
 
-.btn {
-    width: 80px;
+.btn1 {
+    width: 45px;
     height: 30px;
     border-radius: 4px;
     border: 1px solid #ccc;
     outline: none;
     background-color: #aaa;
-    margin: 0 20px;
+    margin: 0 0 0 2px;
 }
 
-.btn:disabled{
+.btn1:disabled{
     background-color:#ccc;
 }
 
-/*·½·¨Ò»ÑùÊ½²¿·Ö*/
+/*é‚è§„ç¡¶æ¶“ï¿½éå³°ç´¡é–®ã„¥å*/
 select {
     width: 120px;
     height: 30px;
 }
 
-/*·½·¨¶şÑùÊ½²¿·Ö*/
+/*é‚è§„ç¡¶æµœå±¾ç‰±å¯®å¿›å„´é’ï¿½*/
 #addr-choice{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -82,7 +82,7 @@ select {
     background-color: #23B7E5;
 }
 
-/*·½·¨ÈıÑùÊ½²¿·Ö*/
+/*é‚è§„ç¡¶æ¶“å¤‹ç‰±å¯®å¿›å„´é’ï¿½*/
 #data-wrap{
     border: 1px solid #ccc;
 }
@@ -126,3 +126,4 @@ select {
     border-radius: 4px;
     cursor: pointer;
 }
+
