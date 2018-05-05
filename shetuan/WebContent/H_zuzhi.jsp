@@ -40,48 +40,8 @@
 			<%@include file="header.jsp" %>
 			<!--header end-->
       		<!--sidebar start-->
-		<aside>
-				<div id="sidebar" class="nav-collapse ">
-					<!-- sidebar menu start-->
-					<ul class="sidebar-menu" id="nav-accordion">
-						<li>
-							<a href="index.jsp">
-								<i class="glyphicon glyphicon-home"></i>
-								<span>主页</span>
-							</a>
-						</li>
-		
-						<li class="sub-menu">
-							<a href="H_bangongshi.jsp">
-								<i class="glyphicon glyphicon-folder-open"></i>
-								<span>办公室</span>
-							</a>
-						</li>
-		
-						<li class="sub-menu">
-							<a href="H_xuanchuan1.jsp">
-								<i class="glyphicon glyphicon-bullhorn"></i>
-								<span>宣传部</span>
-							</a>
-						</li>
-								
-							<li class="sub-menu">
-								<a href="H_zuzhi.jsp">
-									<i class="glyphicon glyphicon-flag"></i>
-									<span>组织部</span>
-								</a>
-							</li>
-		
-							<li class="sub-menu">
-								<a href="member11.html">	
-									<i class="glyphicon glyphicon-stats"></i>
-									<span>加入我们</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</aside>
-		<!--sidebar end-->
+			<%@include file="aside.jsp" %>
+			<!--sidebar end-->
 
 		      <!--main content start-->
 		      <section id="main-content">
