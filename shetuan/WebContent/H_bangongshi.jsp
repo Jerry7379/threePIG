@@ -93,7 +93,7 @@ pageEncoding="utf-8"%>
 							                    	<td><% out.print(rs.getString("Email").toString());%></td>
 							                    	<td><% out.print(rs.getString("password").toString());%></td>
 							                    	<td><% out.print(rs.getString("quanxian").toString());%></td>
-							                    	<td><a href="new.jsp?id=<%=rs.getString("id")%>"  class="" >修改/考勤</a>
+							                    	<td><a href="H_bangongshi1.jsp?id=<%=rs.getString("id")%>"  class="" >修改/考勤</a>
 					                       		</tr>
 					                       		
 				                       		<% 
