@@ -53,7 +53,7 @@ pageEncoding="utf-8"%>
                         <div class="space15"></div>
 
                         <div class="table-responsive">
-						<form action="NewFile1.jsp" method="post">
+							
 		                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
 		                            <thead>
 		                      	  	<tr>
@@ -83,17 +83,17 @@ pageEncoding="utf-8"%>
 					                    	%>
 					                    		
 						                    	<tr class="">
-							                    	<td><input type="text" style="width: 100%;" name="0" class="form-control small" value="<% out.print(rs.getString("name").toString()); %>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="1" class="form-control small" value="<% out.print(rs.getString("sex").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="2" class="form-control small" value="<% out.print(rs.getString("grade").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="3" class="form-control small" value="<% out.print(rs.getString("id").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="4" class="form-control small" value="<% out.print(rs.getString("department").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="5" class="form-control small" value="<% out.print(rs.getString("college").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="6" class="form-control small" value="<% out.print(rs.getString("shengbu").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="7" class="form-control small" value="<% out.print(rs.getString("Email").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="8" class="form-control small" value="<% out.print(rs.getString("password").toString());%>"readonly="true"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="9" class="form-control small" value="<% out.print(rs.getString("quanxian").toString());%>"readonly="true"/></td>
-							                    	<td><input type="submit" name="10" class="btn btn-success" value="评分/修改/考勤" /></td>
+							                    	<td><% out.print(rs.getString("name").toString()); %></td>
+							                    	<td><% out.print(rs.getString("sex").toString());%></td>
+							                    	<td><% out.print(rs.getString("grade").toString());%></td>
+							                    	<td><% out.print(rs.getString("id").toString());%></td>
+							                    	<td><% out.print(rs.getString("department").toString());%></td>
+							                    	<td><% out.print(rs.getString("college").toString());%></td>
+							                    	<td><% out.print(rs.getString("shengbu").toString());%></td>
+							                    	<td><% out.print(rs.getString("Email").toString());%></td>
+							                    	<td><% out.print(rs.getString("password").toString());%></td>
+							                    	<td><% out.print(rs.getString("quanxian").toString());%></td>
+							                    	<td><a href="new.jsp?id=<%=rs.getString("id")%>"  class="" >修改/考勤</a>
 					                       		</tr>
 					                       		
 				                       		<% 
@@ -106,7 +106,7 @@ pageEncoding="utf-8"%>
 			                       	%>
 		                            </tbody>
 	                            </table>
-	                      </form> 
+	                     
                         </div>
                     </div>
                 </div>
