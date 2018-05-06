@@ -120,18 +120,45 @@ var dom = document.getElementById("container");
 			};
 			
 			var BJData = [
-			    [{name:'上海'}, {name:'北京',value:5}],
 			    [{name:'北京'}, {name:'北京',value:50}],
+			    [{name:'上海'}, {name:'北京',value:5}],
 			    [{name:'广州'}, {name:'北京',value:5}],
 			    [{name:'大连'}, {name:'北京',value:5}],
 			    [{name:'南宁'}, {name:'北京',value:5}],
 			    [{name:'南昌'}, {name:'北京',value:5}],
 			    [{name:'拉萨'}, {name:'北京',value:5}],
-			    [{name:'长春'}, {name:'北京',value:5}],
+			    [{name:'吉林'}, {name:'北京',value:5}],
 			    [{name:'南京'}, {name:'北京',value:5}],
 			    [{name:'哈尔滨'}, {name:'北京',value:5}],
 			    [{name:'常州'}, {name:'北京',value:5}]
 			];
+			
+			function aja()
+			{
+				var index="";
+				$.ajax({  
+				    url:"../NewFile.jsp",    //请求的url地址  
+				    dataType:"json",   //返回格式为json  
+				    async:true,//请求是否异步，默认为异步，这也是ajax重要特性  
+				    //data:{"id":"value"},    //参数值  
+				    type:"GET",   //请求方式 get 或者post  
+				    beforeSend:function(){  
+				        //请求前的处理  
+				    },  
+				    success:function(data){  
+				        index=data.value;
+				        alert("你好，成功！");
+				    	//请求成功时处理  
+				    },  
+				    complete:function(){  
+				        //请求完成的处理  
+				    },  
+				    error:function(){  
+				    	alert("你好，我是一个警告框！");
+				    	//请求出错处理  
+				    }  
+				});  
+			}
 			
 			var convertData = function (data) {
 			    var res = [];

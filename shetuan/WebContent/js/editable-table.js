@@ -18,16 +18,16 @@ var EditableTable = function () {
             function editRow(oTable, nRow) {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
-                
-                jqTds[0].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[1] + '">';
-                jqTds[2].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[2] + '">';
-                jqTds[3].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[3] + '">';
-                jqTds[4].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[4] + '">';
-                jqTds[5].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[5] + '">';
-                jqTds[6].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[6] + '">';
-                jqTds[7].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[7] + '">';
-                jqTds[8].innerHTML = '<input type="text" style="width: 100%;" class="form-control small" value="' + aData[8] + '">';
+                innerHTML = '<form name="form1" method="post" action="">';
+                jqTds[0].innerHTML = '<input type="text" style="width: 100%;" name="0" class="form-control small" value="' + aData[0] + '">';
+                jqTds[1].innerHTML = '<input type="text" style="width: 100%;" name="1" class="form-control small" value="' + aData[1] + '">';
+                jqTds[2].innerHTML = '<input type="text" style="width: 100%;" name="2" class="form-control small" value="' + aData[2] + '">';
+                jqTds[3].innerHTML = '<input type="text" style="width: 100%;" name="3" class="form-control small" value="' + aData[3] + '">';
+                jqTds[4].innerHTML = '<input type="text" style="width: 100%;" name="4" class="form-control small" value="' + aData[4] + '">';
+                jqTds[5].innerHTML = '<input type="text" style="width: 100%;" name="5" class="form-control small" value="' + aData[5] + '">';
+                jqTds[6].innerHTML = '<input type="text" style="width: 100%;" name="6" class="form-control small" value="' + aData[6] + '">';
+                jqTds[7].innerHTML = '<input type="text" style="width: 100%;" name="7" class="form-control small" value="' + aData[7] + '">';
+                jqTds[8].innerHTML = '<input type="text" style="width: 100%;" name="8" class="form-control small" value="' + aData[8] + '">';
                 jqTds[9].innerHTML = '<a class="edit" style="width: 100%;" href="">Save</a>';
                 jqTds[10].innerHTML = '<a class="cancel" style="width: 100%;" href="">Cancel</a>';
             }
@@ -90,7 +90,33 @@ var EditableTable = function () {
             jQuery('#editable-sample_wrapper .dataTables_length select').addClass("form-control xsmall"); // modify table per page dropdown
 
             var nEditing = null;
-
+            //ajax start
+            $(document).ready(function(){
+				$("#ajax").mousedown(function(){
+					ajax();
+				});
+			});
+			function ajax(){
+				var name=$("#0").val();
+				var id=$("#1").val();
+				var shengbu=$("#2").val();
+				var xueyuan=$("#3").val();
+				var chuqin=$("#4").val();
+				var yinliang=$("#5").val();
+				var yinse=$("#6").val();
+				var yinzhun=$("#7").val();
+				var email=$("#8").val();
+				$.ajax({
+					type:"post",
+					url:"NewFile.jsp",
+					dateType:"String",
+					data:"name="+name,
+					success:function(json){
+						alert("111");
+					}
+				});
+			}
+			//ajax end
             $('#editable-sample_new').click(function (e) {
                 e.preventDefault();
                 var aiNew = oTable.fnAddData(['', '', '', '', '', '', '', '', '',
