@@ -65,9 +65,9 @@ pageEncoding="utf-8"%>
 				                        <th style="width: 7.15%;">学院</th>
 				                        <th style="width: 7.15%;">声部</th>
 				                        <th style="width: 14.4%;">邮箱</th>
-				                        <th style="width: 14.4%;">密码</th>
+				                        <th style="width: 12.4%;">密码</th>
 				                        <th style="width: 7.15%;">权限</th>
-				                        <th style="width: 7.15%;">编辑</th>
+				                        <th style="width: 9.15%;">编辑</th>
 		                            </tr>
 		                            </thead>
 		                            <tbody>
@@ -93,7 +93,7 @@ pageEncoding="utf-8"%>
 							                    	<td><input type="text" style="width: 100%;" name="7" class="form-control small" value="<% out.print(rs.getString("Email").toString());%>"readonly="true"/></td>
 							                    	<td><input type="text" style="width: 100%;" name="8" class="form-control small" value="<% out.print(rs.getString("password").toString());%>"readonly="true"/></td>
 							                    	<td><input type="text" style="width: 100%;" name="9" class="form-control small" value="<% out.print(rs.getString("quanxian").toString());%>"readonly="true"/></td>
-							                    	<td><input type="submit" name="10" class="btn btn-success" value="修改" /></td>
+							                    	<td><input type="submit" name="10" class="btn btn-success" value="评分/修改/考勤" /></td>
 					                       		</tr>
 					                       		
 				                       		<% 
