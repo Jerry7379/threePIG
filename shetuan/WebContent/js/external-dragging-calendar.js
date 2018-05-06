@@ -66,27 +66,6 @@ var Script = function () {
         },
         events: [
             {
-                title: 'All Day Event',
-                start: new Date(y, m, 2)
-            },
-            {
-                title: 'Long Event',
-                start: new Date(y, m, d-4),
-                end: new Date(y, m, d-2)
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d-3, 16, 0),
-                allDay: false
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, 25, 16, 0),
-                allDay: false
-            },
-            {
                 title: 'Meeting',
                 start: new Date(y, m, 25, 10, 30),
                 allDay: false
@@ -107,7 +86,7 @@ var Script = function () {
                 title: 'Click for Google',
                 start: new Date(y, m, 28),
                 end: new Date(y, m, 29),
-                url: 'http://google.com/'
+                url: 'http://baidu.com/'
             }
         ]
     });

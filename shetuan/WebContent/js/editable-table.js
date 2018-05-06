@@ -18,18 +18,20 @@ var EditableTable = function () {
             function editRow(oTable, nRow) {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
-                innerHTML = '<form name="form1" method="post" action="">';
+                innerHTML = '<form name="form1" method="post" action="NewFile1.jsp">';
                 jqTds[0].innerHTML = '<input type="text" style="width: 100%;" name="0" class="form-control small" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input type="text" style="width: 100%;" name="1" class="form-control small" value="' + aData[1] + '">';
-                jqTds[2].innerHTML = '<input type="text" style="width: 100%;" name="2" class="form-control small" value="' + aData[2] + '">';
+                jqTds[1].innerHTML = '<input type="text" style="width: 100%;" name="id" class="form-control small" value="' + aData[1] + '">';
+                jqTds[2].innerHTML = '<input type="text" style="width: 100%;" name="shenbu" class="form-control small" value="' + aData[2] + '">';
                 jqTds[3].innerHTML = '<input type="text" style="width: 100%;" name="3" class="form-control small" value="' + aData[3] + '">';
                 jqTds[4].innerHTML = '<input type="text" style="width: 100%;" name="4" class="form-control small" value="' + aData[4] + '">';
                 jqTds[5].innerHTML = '<input type="text" style="width: 100%;" name="5" class="form-control small" value="' + aData[5] + '">';
                 jqTds[6].innerHTML = '<input type="text" style="width: 100%;" name="6" class="form-control small" value="' + aData[6] + '">';
                 jqTds[7].innerHTML = '<input type="text" style="width: 100%;" name="7" class="form-control small" value="' + aData[7] + '">';
                 jqTds[8].innerHTML = '<input type="text" style="width: 100%;" name="8" class="form-control small" value="' + aData[8] + '">';
-                jqTds[9].innerHTML = '<a class="edit" style="width: 100%;" href="">Save</a>';
-                jqTds[10].innerHTML = '<a class="cancel" style="width: 100%;" href="">Cancel</a>';
+            
+                jqTds[10].innerHTML = '<a class="edit" style="width: 100%;" href="#" id="btnA">Save</a>';
+                jqTds[11].innerHTML = '<a class="cancel" style="width: 100%;" href="">Cancel</a>';
+                innerHTML = '</form>';
             }
 
             function saveRow(oTable, nRow) {
@@ -117,6 +119,13 @@ var EditableTable = function () {
 				});
 			}
 			//ajax end
+			
+			$(function(){
+                $("#btnA").click(function(){
+                    $("#myForm").submit();
+                });
+            });
+			
             $('#editable-sample_new').click(function (e) {
                 e.preventDefault();
                 var aiNew = oTable.fnAddData(['', '', '', '', '', '', '', '', '',

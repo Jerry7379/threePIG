@@ -50,66 +50,63 @@ pageEncoding="utf-8"%>
                 </header>
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
-                        <div class="clearfix">
-                            <div class="btn-group">
-                                <button id="editable-sample_new" class="btn green">
-                                  	添加新的成员信息 <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
                         <div class="space15"></div>
 
                         <div class="table-responsive">
-
-                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                            <thead>
-                            <tr>
-                                <th style="width: 7.7%;">姓名</th>
-	                            <th style="width: 15.3%;">学号</th>
-	                            <th style="width: 7.7%;">声部</th>
-	                            <th style="width: 7.7%;">学院</th>
-	                            <th style="width: 7.7%;">出勤</th>
-	                            <th style="width: 7.7%;">音量</th>
-	                            <th style="width: 7.7%;"">音色</th>
-	                            <th style="width: 7.7%;">音准</th>
-	                            <th style="width: 15.4%;">邮箱</th>
-	                            <th style="width: 7.7%;">编辑</th>
-	                            <th style="width: 7.7%;">删除</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <%
-		                     	String sql=" select 用户.name,用户.Email,用户.college,评分表.* from 用户,评分表  where 用户.id=评分表.id";
-		                        ResultSet rs = statement.executeQuery(sql); 
-		                        ResultSetMetaData rmeta = rs.getMetaData();
-		                    	//确定数据集的列数，亦字段数
-		                    	int numColumns=rmeta.getColumnCount();
-		                    	// 输出每条记录
-		                    	//rs.next();
-		                    	for(;rs.next();){
-			                    	%><tr class="">
-			                    	<td><% out.print(rs.getString("name").toString()); %></td>
-			                    	<td><% out.print(rs.getString("id").toString());%></td>
-			                    	<td><% out.print(rs.getString("shengbu").toString());%></td>
-			                    	<td><% out.print(rs.getString("college").toString());%></td>
-			                    	<td><% out.print(rs.getString("chuqin").toString());%></td>
-			                    	<td><% out.print(rs.getString("yinliang").toString());%></td>
-			                    	<td><% out.print(rs.getString("yinse").toString());%></td>
-			                    	<td><% out.print(rs.getString("yinzhun").toString());%></td>
-			                    	<td><% out.print(rs.getString("Email").toString());%></td>
-			                    	<td><a class="edit" href="javascript:;">Edit</a></td>
-		                            <td><a class="delete" href="javascript:;">Delete</a></td>
-		                       		</tr><% 
-		                    	}
-		                    	rs.last();
-		                    	//out.println("一共"+rs.getRow()+"条记录");
-		                    	rs.close(); 
-		                    	statement.close();          
-		                    	connection.close(); 
-	                       	%>
-                            </tbody>
-                        </table>
-
+						<form action="NewFile1.jsp" method="post">
+		                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+		                            <thead>
+		                      	  	<tr>
+		                                <th style="width: 7.15%;">姓名</th>          
+				                        <th style="width: 7.15%;">性别</th>
+				                        <th style="width: 7.15%;">年级</th>
+				                        <th style="width: 14%;">学号</th>
+				                        <th style="width: 7.15%;">部门</th>
+				                        <th style="width: 7.15%;">学院</th>
+				                        <th style="width: 7.15%;">声部</th>
+				                        <th style="width: 14.4%;">邮箱</th>
+				                        <th style="width: 14.4%;">密码</th>
+				                        <th style="width: 7.15%;">权限</th>
+				                        <th style="width: 7.15%;">编辑</th>
+		                            </tr>
+		                            </thead>
+		                            <tbody>
+		                            <%
+				                     	String sql=" select * from 用户";
+				                        ResultSet rs = statement.executeQuery(sql); 
+				                        ResultSetMetaData rmeta = rs.getMetaData();
+				                    	//确定数据集的列数，亦字段数
+				                    	int numColumns=rmeta.getColumnCount();
+				                    	// 输出每条记录
+				                    	//rs.next();
+				                    	for(;rs.next();){
+					                    	%>
+					                    		
+						                    	<tr class="">
+							                    	<td><input type="text" style="width: 100%;" name="0" class="form-control small" value="<% out.print(rs.getString("name").toString()); %>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="1" class="form-control small" value="<% out.print(rs.getString("sex").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="2" class="form-control small" value="<% out.print(rs.getString("grade").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="3" class="form-control small" value="<% out.print(rs.getString("id").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="4" class="form-control small" value="<% out.print(rs.getString("department").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="5" class="form-control small" value="<% out.print(rs.getString("college").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="6" class="form-control small" value="<% out.print(rs.getString("shengbu").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="7" class="form-control small" value="<% out.print(rs.getString("Email").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="8" class="form-control small" value="<% out.print(rs.getString("password").toString());%>"readonly="true"/></td>
+							                    	<td><input type="text" style="width: 100%;" name="9" class="form-control small" value="<% out.print(rs.getString("quanxian").toString());%>"readonly="true"/></td>
+							                    	<td><input type="submit" name="10" class="btn btn-success" value="修改" /></td>
+					                       		</tr>
+					                       		
+				                       		<% 
+				                    	}
+				                    	rs.last();
+				                    	//out.println("一共"+rs.getRow()+"条记录");
+				                    	rs.close(); 
+				                    	statement.close();          
+				                    	connection.close(); 
+			                       	%>
+		                            </tbody>
+	                            </table>
+	                      </form> 
                         </div>
                     </div>
                 </div>
