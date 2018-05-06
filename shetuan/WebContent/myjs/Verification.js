@@ -60,11 +60,18 @@ var a = new Boolean();
 	
 function checkSubmit2(xm,email){  
     var Name = self_form.user_name.value;
-    var Email = self_form.user_email.value;  
+    var Email = self_form.user_email.value;
+    var city = self_form.city.value;
     if(Name!=0){
        
     }else{  
         alert("请您先填写您的姓名！");  
+        return false;
+    }  
+    if(city!=0){
+    	alert("请您先填写您的生源地！");  
+    }else{  
+        alert("请您先填写您的生源地！");  
         return false;
     }  
     if(Email!=0){  
