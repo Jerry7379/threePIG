@@ -41,7 +41,7 @@
 					else
 					{%>
 						<li class="sub-menu">
-							<a href="#">	
+							<a href="500.html">	
 								<i class="glyphicon glyphicon-lock"></i>
 								<span>办公室</span>
 							</a>
@@ -66,13 +66,13 @@
 					%><% 
 					else{ %>
 						<li class="sub-menu">
-							<a href="#">	
+							<a href="500.html">	
 								<i class="glyphicon glyphicon-lock"></i>
 								<span>宣传部</span>
 							</a>
 						</li>
 						<li class="sub-menu">
-							<a href="#">	
+							<a href="500.html">	
 								<i class="glyphicon glyphicon-lock"></i>
 								<span>组织部</span>
 							</a>
