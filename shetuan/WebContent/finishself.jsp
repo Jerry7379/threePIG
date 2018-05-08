@@ -20,6 +20,7 @@ String 邮箱=request.getParameter("user_email");
 String 学院=request.getParameter("xy");
 //out.println(学院);
 String 年级=request.getParameter("nj");
+
 //out.println(年级);
 
 %>
