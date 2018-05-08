@@ -1,37 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
-<title>»·ĞÎ±ı×´Í¼</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç¯å½¢é¥¼çŠ¶å›¾</title>
 <script src="echarts/echarts.min.js"></script>
 </head>
 <body>
 <% 
-	String sql_select="SELECT* from ÓÃ»§";
+	String sql_select="SELECT* from ç”¨æˆ·";
 	ResultSet rs = statement.executeQuery(sql_select);
 	ResultSetMetaData rmeta = rs.getMetaData();
-	//È·¶¨Êı¾İ¼¯µÄÁĞÊı£¬Òà×Ö¶ÎÊı
+	//ç¡®å®šæ•°æ®é›†çš„åˆ—æ•°ï¼Œäº¦å­—æ®µæ•°
 	int numColumns=rmeta.getColumnCount();
-	// Êä³öÃ¿Ìõ¼ÇÂ¼ 
+	// è¾“å‡ºæ¯æ¡è®°å½• 
 	int a=0,b=0,c=0,d=0;
 	for(;rs.next();)
 	{
-		if(rs.getString("grade").equals("´óÒ»"))
+		if(rs.getString("grade").equals("å¤§ä¸€"))
 		{
 			a++;
 		}
-		if(rs.getString("grade").equals("´ó¶ş"))
+		if(rs.getString("grade").equals("å¤§äºŒ"))
 		{
 			b++;
 		}
-		if(rs.getString("grade").equals("´óÈı"))
+		if(rs.getString("grade").equals("å¤§ä¸‰"))
 		{
 			c++;
 		}
-		if(rs.getString("grade").equals("´óËÄ"))
+		if(rs.getString("grade").equals("å¤§å››"))
 		{
 			d++;
 		}
@@ -44,38 +44,38 @@
 %>
 <div id="main" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
-        // »ùÓÚ×¼±¸ºÃµÄdom£¬³õÊ¼»¯echartsÊµÀı
+        // åŸºäºå‡†å¤‡å¥½çš„domï¼Œåˆå§‹åŒ–echartså®ä¾‹
         var myChart = echarts.init(document.getElementById('main'));
-        // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
+        // æŒ‡å®šå›¾è¡¨çš„é…ç½®é¡¹å’Œæ•°æ®
         var option = {
         		title: {
         			x: 'center',
-                    text: '¸÷Äê¼¶ÔÚÍÅÈËÔ±·Ö²¼Í¼'
+                    text: 'å„å¹´çº§åœ¨å›¢äººå‘˜åˆ†å¸ƒå›¾'
                 },
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
     legend: {
-        orient: 'vertical',//²¼¾Ö·½Ê½£º ´¹Ö±
+        orient: 'vertical',//å¸ƒå±€æ–¹å¼ï¼š å‚ç›´
         x: 'left',
-        data:['´óÒ»Ñ§Éú','´ó¶şÑ§Éú','´óÈıÑ§Éú','´óËÄÑ§Éú']
+        data:['å¤§ä¸€å­¦ç”Ÿ','å¤§äºŒå­¦ç”Ÿ','å¤§ä¸‰å­¦ç”Ÿ','å¤§å››å­¦ç”Ÿ']
     },
     series: [
         {
-            name:'·ÃÎÊÀ´Ô´',
+            name:'è®¿é—®æ¥æº',
             type:'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
-            /*ÊÇ·ñÆôÓÃ·ÀÖ¹±êÇ©ÖØµş²ßÂÔ£¬Ä¬ÈÏ¿ªÆô£¬ÔÚ±êÇ©Óµ¼·ÖØµşµÄÇé¿öÏÂ»áÅ²¶¯¸÷¸ö±êÇ©µÄÎ»ÖÃ£¬·ÀÖ¹±êÇ©¼äµÄÖØµş¡£
-			Èç¹û²»ĞèÒª¿ªÆô¸Ã²ßÂÔ£¬ÀıÈçÔ²»·Í¼Õâ¸öÀı×ÓÖĞĞèÒªÇ¿ÖÆËùÓĞ±êÇ©·ÅÔÚÖĞĞÄÎ»ÖÃ£¬¿ÉÒÔ½«¸ÃÖµÉèÎª false¡£*/
+            /*æ˜¯å¦å¯ç”¨é˜²æ­¢æ ‡ç­¾é‡å ç­–ç•¥ï¼Œé»˜è®¤å¼€å¯ï¼Œåœ¨æ ‡ç­¾æ‹¥æŒ¤é‡å çš„æƒ…å†µä¸‹ä¼šæŒªåŠ¨å„ä¸ªæ ‡ç­¾çš„ä½ç½®ï¼Œé˜²æ­¢æ ‡ç­¾é—´çš„é‡å ã€‚
+			å¦‚æœä¸éœ€è¦å¼€å¯è¯¥ç­–ç•¥ï¼Œä¾‹å¦‚åœ†ç¯å›¾è¿™ä¸ªä¾‹å­ä¸­éœ€è¦å¼ºåˆ¶æ‰€æœ‰æ ‡ç­¾æ”¾åœ¨ä¸­å¿ƒä½ç½®ï¼Œå¯ä»¥å°†è¯¥å€¼è®¾ä¸º falseã€‚*/
             label: {
                 normal: {
                     show: false,
                     position: 'center'
                 },
                 emphasis: {
-                    show: true,//È¦ÀïÏÔÊ¾ÎÄ×Ö
+                    show: true,//åœˆé‡Œæ˜¾ç¤ºæ–‡å­—
                     textStyle: {
                         fontSize: '30',
                         fontWeight: 'bold'
@@ -88,10 +88,10 @@
                 }
             },
             data:[
-            	 {value:<%out.print(a);%>, name:'´óÒ»Ñ§Éú'},//¸÷²¿·Ö²¼¾Ö´óĞ¡
-                 {value:<%out.print(b);%>, name:'´ó¶şÑ§Éú'},
-                 {value:<%out.print(c);%>, name:'´óÈıÑ§Éú'},
-                 {value:<%out.print(d);%>, name:'´óËÄÑ§Éú'}  
+            	 {value:<%out.print(a);%>, name:'å¤§ä¸€å­¦ç”Ÿ'},//å„éƒ¨åˆ†å¸ƒå±€å¤§å°
+                 {value:<%out.print(b);%>, name:'å¤§äºŒå­¦ç”Ÿ'},
+                 {value:<%out.print(c);%>, name:'å¤§ä¸‰å­¦ç”Ÿ'},
+                 {value:<%out.print(d);%>, name:'å¤§å››å­¦ç”Ÿ'}  
             ]
         }
     ]

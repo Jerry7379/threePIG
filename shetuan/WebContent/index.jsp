@@ -5,6 +5,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts/echarts.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
@@ -50,8 +53,9 @@
                                   	<div class="panel-body">
                                     	<h1><strong>大学生艺术团</strong> <br>北京物资学院</h1>
                                     	<div class="desk yellow">
-	                                        <h3>------------------------------------</h3>
-	                                        <p>大艺团由礼仪团、舞团、合唱团、戏剧团、管乐团五个分团组成。礼仪团隶属于大学生艺术团，礼仪团的活动就是出礼仪，上台颁奖、引领老师、迎宾等等。</p>
+	                                        <h3>-------------------------------</h3>
+	                                        <p>北京物资学院大学生艺术团是隶属于校团委的学生艺术团体,它以弘扬先进文化为宗旨，以繁荣校园文化、服务青年学生成长成材为根本。为北京物资学院的莘莘学子提供了广阔的艺术空间和展示自己才华的舞台，培养了大批艺术人才，成为美丽象牙塔里一道清新亮丽的风景线。
+	                                        大艺团由礼仪团、舞团、合唱团、戏剧团、管乐团五个分团组成。礼仪团隶属于大学生艺术团，礼仪团的活动就是出礼仪，上台颁奖、引领老师、迎宾等等。</p>
                                     	</div>
                        				</div>
                               	</div>
@@ -59,7 +63,7 @@
                           	<aside class="post-highlight yellow v-align">
                               	<div class="panel-body text-center">
                                   	<div class="pro-thumb">
-                                      	<img src="img/photos/微信图片_20180323204139.jpg" alt="">
+                                      	<img src="img/photos/艺术.PNG" alt="">
                                   	</div>
                               	</div>
                           	</aside>
@@ -72,17 +76,25 @@
 									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 									<li data-target="#myCarousel" data-slide-to="1"></li>
 									<li data-target="#myCarousel" data-slide-to="2"></li>
+									<li data-target="#myCarousel" data-slide-to="3"></li>
+									<li data-target="#myCarousel" data-slide-to="4"></li>
 								</ol>   
 								<!-- 轮播（Carousel）项目 -->
 								<div class="carousel-inner">
 									<div class="item active">
-										<img src="img/404_icon.png" alt="First slide">
+										<img src="img/photos/微信图片_201805041056105.jpg" alt="First slide">
 									</div>
 									<div class="item">
 										<img src="img/photos/微信图片_20180323204032.jpg" alt="Second slide">
 									</div>
 									<div class="item">
-										<img src="img/photos/微信图片_20180323204139.jpg" alt="Third slide">
+										<img src="img/photos/微信图片_201805041056104.jpg" alt="Third slide">
+									</div>
+									<div class="item">
+										<img src="img/photos/微信图片_201805041056102.jpg" alt="Fourth slide">
+									</div>
+									<div class="item">
+										<img src="img/photos/微信图片_20180504105610.jpg" alt="Fifth slide">
 									</div>
 								</div>
 								<!-- 轮播（Carousel）导航 -->
@@ -98,14 +110,78 @@
 						</aside>
 					</div>
 					<div class="row">
-						<aside class="col-lg-6">
-                      		<section class="panel">
-                          		<div class="panel-body">
-                              		<div id="calendar" class="has-toolbar"></div>
-                          		</div>
-                      		</section>
+						<aside class="col-lg-12">
+                      			<% 
+									String sql_select="SELECT* from 用户";
+									ResultSet rs = statement.executeQuery(sql_select);
+									ResultSetMetaData rmeta = rs.getMetaData();
+									//确定数据集的列数，亦字段数
+									int numColumns=rmeta.getColumnCount();
+									// 输出每条记录 
+									int a=0,b=0,c=0,d=0,e=0,f=0;
+									for(;rs.next();)
+									{
+										if(rs.getString("college").equals("信息学院"))
+										{
+											a++;
+										}
+										if(rs.getString("college").equals("经济学院"))
+										{
+											b++;
+										}
+										if(rs.getString("college").equals("法学院"))
+										{
+											c++;
+										}
+										if(rs.getString("college").equals("物流学院"))
+										{
+											d++;
+										}
+										if(rs.getString("college").equals("商学院"))
+										{
+											e++;
+										}
+										if(rs.getString("college").equals("外语学院"))
+										{
+											f++;
+										}
+										
+									}
+									rs.close(); 
+									
+								
+								%>
+								<div id="main" style="width: 1000px;height:500px;"></div>
+							    <script type="text/javascript">
+							        // 基于准备好的dom，初始化echarts实例
+							        var myChart = echarts.init(document.getElementById('main'));
+							
+							        // 指定图表的配置项和数据
+							        var option = {
+							            title: {
+							                text: '在团人员各学院人数'
+							            },
+							            tooltip: {},
+							            legend: {
+							                data:['各学院学生在团人数']
+							            },
+							            xAxis: {
+							                data: ["信息","经济","法","物流","商","外语"]
+							            },
+							            yAxis: {},
+							            series: [{
+							                name: '各学院学生在团人数',
+							                type: 'bar',
+							                data: [<%out.print(a+","+b+","+c+","+d+","+e+","+f);%>]
+							            }]
+							        };
+							  // 使用刚指定的配置项和数据显示图表。
+							        myChart.setOption(option);
+							    </script>		
                   		</aside>
-						<aside class="col-lg-6">
+
+                 <div class="row">                  		
+						<aside class="col-lg-12">
                       		<!--collapse start-->
 		                    <div class="panel-group m-bot20" id="accordion">
 		                    <% 
@@ -118,10 +194,10 @@
 		                    clas[2]="panel-collapse collapse";
 		                    	
 			                    String sql="select * from 发布新闻  group by time";
-	                       		ResultSet rs = statement.executeQuery(sql);
-    							ResultSetMetaData rmeta = rs.getMetaData();
+	                       		 rs = statement.executeQuery(sql);
+    							//ResultSetMetaData rmeta = rs1.getMetaData();
     							//确定数据集的列数，亦字段数
-    							int numColumns=rmeta.getColumnCount();
+    							//int numColumns=rmeta.getColumnCount();
 		                    	for(int i=0;i<3;i++)
 		                    	{%>
 			                        <div class="panel panel-default">
@@ -132,10 +208,10 @@
 			                                   		
 			                                   	
 			                                   			rs.next();
-			                                   			String c=rs.getString("title");
-			                                   			String a=rs.getString("time");
-			                                   			a=a.substring(0,16);
-			                                   			out.println(c+"      "+a+"");
+			                                   			String title=rs.getString("title");
+			                                   			String z=rs.getString("time");
+			                                   			z=z.substring(0,16);
+			                                   			out.println(title+"      "+z+"");
 			                                   			
 			                                   		
 			                                 

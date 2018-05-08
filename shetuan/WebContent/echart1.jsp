@@ -1,46 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="conn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
-<title>ÔÚÍÅÈËÔ±¸÷Ñ§ÔºÈËÊı</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>åœ¨å›¢äººå‘˜å„å­¦é™¢äººæ•°</title>
 <script src="echarts/echarts.min.js"></script>
 </head>
 <body>
 
 <% 
-	String sql_select="SELECT* from ÓÃ»§";
+	String sql_select="SELECT* from ç”¨æˆ·";
 	ResultSet rs = statement.executeQuery(sql_select);
 	ResultSetMetaData rmeta = rs.getMetaData();
-	//È·¶¨Êı¾İ¼¯µÄÁĞÊı£¬Òà×Ö¶ÎÊı
+	//ç¡®å®šæ•°æ®é›†çš„åˆ—æ•°ï¼Œäº¦å­—æ®µæ•°
 	int numColumns=rmeta.getColumnCount();
-	// Êä³öÃ¿Ìõ¼ÇÂ¼ 
+	// è¾“å‡ºæ¯æ¡è®°å½• 
 	int a=0,b=0,c=0,d=0,e=0,f=0;
 	for(;rs.next();)
 	{
-		if(rs.getString("college").equals("ĞÅÏ¢Ñ§Ôº"))
+		if(rs.getString("college").equals("ä¿¡æ¯å­¦é™¢"))
 		{
 			a++;
 		}
-		if(rs.getString("college").equals("¾­¼ÃÑ§Ôº"))
+		if(rs.getString("college").equals("ç»æµå­¦é™¢"))
 		{
 			b++;
 		}
-		if(rs.getString("college").equals("·¨Ñ§Ôº"))
+		if(rs.getString("college").equals("æ³•å­¦é™¢"))
 		{
 			c++;
 		}
-		if(rs.getString("college").equals("ÎïÁ÷Ñ§Ôº"))
+		if(rs.getString("college").equals("ç‰©æµå­¦é™¢"))
 		{
 			d++;
 		}
-		if(rs.getString("college").equals("ÉÌÑ§Ôº"))
+		if(rs.getString("college").equals("å•†å­¦é™¢"))
 		{
 			e++;
 		}
-		if(rs.getString("college").equals("ÍâÓïÑ§Ôº"))
+		if(rs.getString("college").equals("å¤–è¯­å­¦é™¢"))
 		{
 			f++;
 		}
@@ -51,31 +51,31 @@
 	connection.close();
 
 %>
-	<div id="main" style="width: 600px;height:400px;"></div>
+	<div id="main" style="width: 30px;height:30px;"></div>
     <script type="text/javascript">
-        // »ùÓÚ×¼±¸ºÃµÄdom£¬³õÊ¼»¯echartsÊµÀı
+        // åŸºäºå‡†å¤‡å¥½çš„domï¼Œåˆå§‹åŒ–echartså®ä¾‹
         var myChart = echarts.init(document.getElementById('main'));
 
-        // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
+        // æŒ‡å®šå›¾è¡¨çš„é…ç½®é¡¹å’Œæ•°æ®
         var option = {
             title: {
-                text: 'ÔÚÍÅÈËÔ±¸÷Ñ§ÔºÈËÊı'
+                text: 'åœ¨å›¢äººå‘˜å„å­¦é™¢äººæ•°'
             },
             tooltip: {},
             legend: {
-                data:['¸÷Ñ§ÔºÑ§ÉúÔÚÍÅÈËÊı']
+                data:['å„å­¦é™¢å­¦ç”Ÿåœ¨å›¢äººæ•°']
             },
             xAxis: {
-                data: ["ĞÅÏ¢","¾­¼Ã","·¨","ÎïÁ÷","ÉÌ","ÍâÓï"]
+                data: ["ä¿¡æ¯","ç»æµ","æ³•","ç‰©æµ","å•†","å¤–è¯­"]
             },
             yAxis: {},
             series: [{
-                name: '¸÷Ñ§ÔºÑ§ÉúÔÚÍÅÈËÊı',
+                name: 'å„å­¦é™¢å­¦ç”Ÿåœ¨å›¢äººæ•°',
                 type: 'bar',
                 data: [<%out.print(a+","+b+","+c+","+d+","+e+","+f);%>]
             }]
         };
-  // Ê¹ÓÃ¸ÕÖ¸¶¨µÄÅäÖÃÏîºÍÊı¾İÏÔÊ¾Í¼±í¡£
+  // ä½¿ç”¨åˆšæŒ‡å®šçš„é…ç½®é¡¹å’Œæ•°æ®æ˜¾ç¤ºå›¾è¡¨ã€‚
         myChart.setOption(option);
     </script>
 
