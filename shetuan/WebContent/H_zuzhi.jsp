@@ -55,68 +55,58 @@
 		                      <div class="adv-table editable-table ">
 		                          <div class="clearfix">
 		                              <div class="btn-group">
-		                                  <button id="editable-sample_new" class="btn green">
+		                                  <a class="btn" href="NewActive.jsp">
 		                                      	添加新活动日期 <i class="fa fa-plus"></i>
-		                                  </button>
+		                                  </a>
 		                              </div>
 		                          </div>
-		                          <div class="space15"></div>
-		
+		                          <div style="height:10px;"></div>
 		                          <div >
-		
-		                          <table class="table table-striped table-hover table-bordered" id="editable-sample">
-		                              <thead>
-		                              <tr>
-		                                  <th>活动ID</th>
-		                                  <th>社团名称</th>
-		                                  <th>活动名称</th>
-		                                  <th>活动地点</th>
-		                                  <th>活动时间</th>
-		                                  <th>负责人</th>
-		                                  <th>编辑</th>
-		                                  <th>删除</th>
-		                              </tr>
-		                              </thead>
-		                              <tbody>
-		                               <%
-                              
-                          	  //String name=(String)application.getAttribute("name");
-                            /*  
-    						if(name.equals(""))
-                              {
-                              	//弹窗，告知没有权限。
-                              }
-                              else
-                              {*/
-	                              	String sql=" select * from 活动安排";
-	                              	ResultSet rs = statement.executeQuery(sql); 
-	                              	ResultSetMetaData rmeta = rs.getMetaData();
-	                    			//确定数据集的列数，亦字段数
-	                    			int numColumns=rmeta.getColumnCount();
-	                    			// 输出每条记录
-	                    			//rs.next();
-	                    			for(;rs.next();)
-	                    			{
-	                    				%><td><% out.print(rs.getString("actid").toString()); %></td>
-	                    				  <td><% out.print(rs.getString("stname").toString());%></td>
-	                    				  <td><%  out.print(rs.getString("actname").toString());%></td>
-	                    				  <td><%  out.print(rs.getString("actlocal").toString());%></td>
-	                    				  <td><%  out.print(rs.getString("acttime").toString());%></td>
-	                    				  <td><%  out.print(rs.getString("actleader").toString());%></td>
-	                    				  <td><a class="edit" href="javascript:;">修改信息</a></td>
-                                          <td><a class="delete" href="javascript:;">删除信息</a></td>
-                                          <% 
-                    				}
-	                    			rs.last();
-	                    			//out.println("一共"+rs.getRow()+"条记录");
-	                    			rs.close(); 
-	                    			statement.close();          
-	                    			connection.close(); 
-                             // }%>
-		                              
-		                              </tbody>
-		                          </table>
-		
+		                          <form>
+		                          		<table class="table table-striped table-hover table-bordered" id="editable-sample">
+			                           		<thead>
+				                           		<tr>
+					                          		<th>活动ID</th>
+					                                <th>社团名称</th>
+					                                <th>活动名称</th>
+					                                <th>活动地点</th>
+					                                <th>活动时间</th>
+					                                <th>负责人</th>
+					                                <th>编辑</th>
+				                              	</tr>
+			                           		</thead>
+			                       			<tbody>
+			                              	<%
+				                       			String sql=" select * from 活动安排";
+				                              	ResultSet rs = statement.executeQuery(sql); 
+				                              	ResultSetMetaData rmeta = rs.getMetaData();
+				                   			   	//确定数据集的列数，亦字段数
+				                    			int numColumns=rmeta.getColumnCount();
+				                    			// 输出每条记录
+				                    			//rs.next();
+				                    			for(;rs.next();)
+				                    			{
+				                    				%>
+				                    				</tr>
+				                    					<td><% out.print(rs.getString("actid").toString()); %></td>
+				                    				 	<td><% out.print(rs.getString("stname").toString());%></td>
+				                    				  	<td><% out.print(rs.getString("actname").toString());%></td>
+				                    				  	<td><% out.print(rs.getString("actlocal").toString());%></td>
+				                    				  	<td><% out.print(rs.getString("acttime").toString());%></td>
+				                    				  	<td><% out.print(rs.getString("actleader").toString());%></td>
+				                    				  	<td><a class="" href="zuzhi_edit.jsp?id=<%=rs.getString("actid")%>">修改信息</a></td>
+				                    				</tr>
+			                                        <% 
+			                    				}
+				                    			rs.last();
+				                    			//out.println("一共"+rs.getRow()+"条记录");
+				                    			rs.close(); 
+				                    			statement.close();          
+				                    			connection.close(); 
+			                             	%> 
+			                          	</tbody>
+			                          	</table>
+										</form>
 		                          </div>
 		                      </div>
 		                  </div>

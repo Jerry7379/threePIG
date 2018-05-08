@@ -20,14 +20,15 @@ String 邮箱=request.getParameter("user_email");
 String 学院=request.getParameter("xy");
 //out.println(学院);
 String 年级=request.getParameter("nj");
+
 //out.println(年级);
 
 %>
 
 <%
-	if(city!=""){
+	//if(city!=""){
 		String a=(String)application.getAttribute("id");
-		String sql_modify="update 用户 set name='"+姓名+"' ,grade='"+年级+"' ,Email='"+邮箱+"' ,city='"+city+"' ,college='"+学院+"' ,sex='"+性别+"'  where id= "+a;
+		String sql_modify="update 用户 set name='"+姓名+"' ,grade='"+年级+"' ,Email='"+邮箱+"' ,college='"+学院+"' ,sex='"+性别+"'  where id= "+a;
 	    int count = statement.executeUpdate(sql_modify);  // 执行插入操作的sql语句，并返回插入数据的个数   
 		if(count>0)
 		{
@@ -36,10 +37,10 @@ String 年级=request.getParameter("nj");
 		
 		statement.close();         
 		connection.close(); 
-	}
-	else{
-		out.print("<script>alert('请输入生源地！！！'); window.location='finishself.html' </script>");
-	}
+	//}
+	//else{
+		//out.print("<script>alert('请输入生源地！！！'); window.location='finishself.html' </script>");
+	//}
 	
 	%>
 
