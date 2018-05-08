@@ -39,7 +39,7 @@
 	
 	if(userId.equals("")||password.equals(""))
 	{
-		response.sendRedirect("login.html");
+		out.print("<script>alert('用户名和密码不能为空！'); window.location='login.html' </script>");
 	}
 	
 	
@@ -51,10 +51,10 @@
 		//out.print(sql_select);
 		ResultSet rs = statement.executeQuery(sql_select); 
 		//获得数据结果集合
-		//rs.next();
-		if(rs.equals(null))
+		//
+		if(!rs.next())
 		{
-			response.sendRedirect("login.html");
+			out.print("<script>alert('用户不存在！！'); window.location='login.html' </script>");
 		}
 		else
 		{
