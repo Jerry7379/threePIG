@@ -54,23 +54,22 @@
                         <div class="space15"></div>
 
                         <div class="table-responsive">
-							<form action="H_bangongshi2.jsp" method="post">
+							<form action="H_bangongshi3.jsp" method="post">
 		                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
 		                            <thead>
-		                      	  	<tr>
-		                                <th style="width: 7.15%;">姓名</th>          
-				                        <th style="width: 7.15%;">性别</th>
-				                        <th style="width: 7.15%;">年级</th>
-				                        <th style="width: 14%;">学号</th>
-				                        <th style="width: 7.15%;">部门</th>
-				                        <th style="width: 7.15%;">学院</th>
-				                        <th style="width: 7.15%;">声部</th>
-				                        <th style="width: 14.4%;">邮箱</th>
-				                        <th style="width: 12.4%;">密码</th>
-				                        <th style="width: 7.15%;">权限</th>
-		                            </tr>
+			                      	  	<tr>
+			                                <th style="width: 7.15%;">姓名</th>          
+					                        <th style="width: 7.15%;">性别</th>
+					                        <th style="width: 7.15%;">年级</th>
+					                        <th style="width: 14%;">学号</th>
+					                        <th style="width: 7.15%;">部门</th>
+					                        <th style="width: 7.15%;">学院</th>
+					                        <th style="width: 7.15%;">声部</th>
+					                        <th style="width: 14.4%;">邮箱</th>
+					                        <th style="width: 12.4%;">密码</th>
+					                        <th style="width: 7.15%;">权限</th>
+			                            </tr>
 		                            </thead>
-		                            <tbody>
 		                            <%
 		                            	String id=request.getParameter("id");
 				                     	String sql=" select * from 用户 where id="+id;
@@ -82,6 +81,7 @@
 				                    	//rs.next();
 				                    	rs.next();
 					                    	%>
+					                    	<tbody>
 					                    		<tr class="">
 							                    	<td><input type="text" style="width: 100%;" name="0" class="form-control small" value="<% out.print(rs.getString("name").toString()); %>"/></td>
 							                    	<td><input type="text" style="width: 100%;" name="1" class="form-control small" value="<% out.print(rs.getString("sex").toString());%>"/></td>
@@ -93,10 +93,18 @@
 							                    	<td><input type="text" style="width: 100%;" name="7" class="form-control small" value="<% out.print(rs.getString("Email").toString());%>"/></td>
 							                    	<td><input type="text" style="width: 100%;" name="8" class="form-control small" value="<% out.print(rs.getString("password").toString());%>"/></td>
 							                    	<td><input type="text" style="width: 100%;" name="9" class="form-control small" value="<% out.print(rs.getString("quanxian").toString());%>"/></td>
-					                       		</tr> 	
+					                       		</tr>
+					                       	</tbody>
+					                       		<% 
+							                    	rs.last();
+							                    	//out.println("一共"+rs.getRow()+"条记录");
+							                    	rs.close(); 
+							                    	
+							                    	 
+			                       				%> 	
 					                       		<thead>
 						                      	  	<tr>
-						                                <th style="width: 7.15%;">出勤</th>          
+						                                <th style="width: 7.15%;">缺勤</th>          
 								                        <th style="width: 7.15%;">音准</th>
 								                        <th style="width: 7.15%;">音色</th>
 								                        <th style="width: 14%;">音乐表现力</th>
@@ -104,22 +112,59 @@
 								                        <th style="width: 7.15%;">修改</th>   
 						                            </tr>
 					                            </thead>
-					                       		<tr class="">
-							                    	<td><input type="text" style="width: 100%;" name="0" class="form-control small" value="<% out.print(rs.getString("name").toString()); %>"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="1" class="form-control small" value="<% out.print(rs.getString("sex").toString());%>"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="2" class="form-control small" value="<% out.print(rs.getString("grade").toString());%>"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="3" class="form-control small" value="<% out.print(rs.getString("id").toString());%>"/></td>
-							                    	<td><input type="text" style="width: 100%;" name="4" class="form-control small" value="<% out.print(rs.getString("department").toString());%>"readonly="true"/></td>
-							                    	<td><input type="submit" name="10" class="btn btn-success" value="确认修改" /></td>
-					                       		</tr> 			
-				                       		<% 
-				                    	rs.last();
-				                    	//out.println("一共"+rs.getRow()+"条记录");
-				                    	rs.close(); 
-				                    	statement.close();          
-				                    	connection.close(); 
-			                       	%>
-		                            </tbody>
+					                            <%
+					                            	String sql1="select * from 评分表  where id="+id;
+						                            rs = statement.executeQuery(sql1); 
+							                        //rs.next();
+							                        int a=0;
+							                        rs.last(); 
+							                        int rowCount = rs.getRow();
+							                        rs.first();
+							                       
+							                        if(rowCount!=0)
+							                        {
+							                        	application.setAttribute("a","1");
+							                        	
+										             %>
+										                     <tbody>
+											                     <tr class="">
+											                        	<td><input type="text" style="width: 100%;" name="chuqin" class="form-control small" value="<% out.print(rs.getString("chuqin").toString());%>"/></td>
+												                    	<td><input type="text" style="width: 100%;" name="yinzhun"class="form-control small" value="<% out.print(rs.getString("yinzhun").toString());%>"/></td>
+												                    	<td><input type="text" style="width: 100%;" name="yinse" class="form-control small" value="<% out.print(rs.getString("yinse").toString());%>"/></td>
+												                    	<td><input type="text" style="width: 100%;" name="yinliang" class="form-control small" value="<% out.print(rs.getString("yinliang").toString());%>"/></td>
+												                    	<td><input type="text" style="width: 100%;" name="qimo" class="form-control small" value="<% out.print(rs.getString("qimo").toString());%>"readonly="true"/></td>
+												                    	<td><input type="submit" class="btn btn-success" value="确认修改" /></td>
+												                 </tr>    	
+											                 </tbody>   	
+										                        	
+										           	<%	
+							                        }
+							                        else
+							                        {
+							                        	application.setAttribute("a","2");
+							                        %>
+							                        	 <tbody>
+									                     <tr class="">
+									                        	<td><input type="text" style="width: 100%;"  name="chuqin" class="form-control small" /></td>
+										                    	<td><input type="text" style="width: 100%;"  name="yinzhun"class="form-control small" /></td>
+										                    	<td><input type="text" style="width: 100%;"  name="yinse"class="form-control small" /></td>
+										                    	<td><input type="text" style="width: 100%;"  name="yinliang"class="form-control small" /></td>
+										                    	<td><input type="text" style="width: 100%;"  name="qimo"class="form-control small" readonly="true"/></td>
+										                    	<td><input type="submit" class="btn btn-success" value="确认修改" /></td>
+										                 </tr>    	
+									                 </tbody>   	
+								                        	
+							                        	
+							                       <%}
+							                        	
+							                     
+							                    	rs.last();
+							                    	//out.println("一共"+rs.getRow()+"条记录");
+							                    	rs.close(); 
+							                    	statement.close();          
+							                    	connection.close(); 
+							                    	
+			                       					%> 
 	                            </table>
 	                     	</form>
                         </div>
@@ -172,60 +217,6 @@
      <!-- END JAVASCRIPTS -->
 
 
-<% 
-/*
-	String ID=request.getParameter("id");
-	//从前端获取成员学号
-	String SHENGBU=request.getParameter("shenbu");
-	//从前端获取成员所在声部
-	String CHUQIN=request.getParameter("chuqin");
-	int chuqin=Integer.valueOf(CHUQIAN);
-	//获取成员的出勤信息
-	String YINLIANG=request.getParameter("yinliang");
-	int yinliang=Integer.valueOf(YINLIANG);
-	//获取成员的音量信息
-	String YINSE=request.getParameter("yinse");
-	int yinse=Integer.valueOf(YINSE);
-	//获取成员的音色信息
-	String YINZHUN=request.getParameter("yinzhun");
-	int yinzhun=Integer.valueOf(YINZHUN);
-	//获取成员的音准信息
-	if(chuqin>50&&chuqin<15)
-	{
-		out.print("<script>alert('出勤成绩输入错误！！！'); window.location='H_bangongshi.jsp' </script>");
-	}
-	if(yingliang>10&&yingliang<0)
-	{
-		out.print("<script>alert('音乐表现力成绩输入错误！！！'); window.location='H_bangongshi.jsp' </script>");
-	}
-	if(yinse>10&&yinse<0)
-	{
-		out.print("<script>alert('音色成绩输入错误！！！'); window.location='H_bangongshi.jsp' </script>");
-	}
-	if(yinzhun>30&&yinzhun<0)
-	{
-		out.print("<script>alert('音准成绩输入错误！！！'); window.location='H_bangongshi.jsp' </script>");
-	}
-
-	
-	else
-	{
-		String sql_insert="INSERT INTO 评分表(Id,shengbu,chuqin,yinliang,yinse,yinzhun) VALUES('"+ID+"','"+SHENGBU+"','"+CHUQIN+"','"+YINLIANG+"','"+YINSE+"','"+YINZHUN+"')";
-	   // 把sql语句存到sql_insert变量
-	    int count = statement.executeUpdate(sql_insert);  
-	   // 执行插入操作的sql语句，并返回插入数据的个数   
-		if(count>0)     //如果插入成功，count>0表示插入插入成功
-		{
-			response.sendRedirect("H_bangongshi.jsp");
-			//跳转到H_bangongshi.jsp页面
-		}          
-		
-		statement.close();         
-		connection.close();
-		//这两句断开数据库连接
-	}
-*/
-%>
 
 </body>
 </html>
